@@ -35,6 +35,19 @@ BI_Dashboards_Data/
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
+# Bundled minimal dataset required to run the prototype
+!data/raw/statslook/
+!data/raw/statslook/Statslook_Scouting_Master_Final.csv
+!data/raw/transfermarkt/
+!data/raw/transfermarkt/players.csv
+!data/raw/transfermarkt/clubs.csv
+!data/raw/transfermarkt/competitions.csv
+!data/raw/transfermarkt/player_valuations.csv
+!data/processed/statslook_clean.parquet
+!data/processed/transfermarkt_enrichment.parquet
+!data/processed/players_master.parquet
+!data/processed/unmatched_players.csv
+
 # Generated or exploratory assets
 *.png
 *.jpg

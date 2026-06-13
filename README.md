@@ -6,7 +6,7 @@ Statslook is the authoritative source for performance metrics. Transfermarkt dat
 
 ## Quick Start
 
-This repository does not include the raw football datasets. To run the project on another computer, clone the repository, install the Python dependencies, add the data files, build the processed master table, and then start the Streamlit dashboard.
+This repository includes the minimal raw and processed data needed to inspect the prototype. To run the project on another computer, clone the repository, install the Python dependencies, and start the Streamlit dashboard. Rebuilding the processed master table is optional unless you replace the raw data.
 
 ```bash
 git clone https://github.com/egechn/Player-Profile-Replacement-Engine.git
@@ -32,7 +32,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Add the data files:
+The bundled minimal data files are:
 
 ```text
 data/raw/statslook/Statslook_Scouting_Master_Final.csv
@@ -40,20 +40,21 @@ data/raw/transfermarkt/players.csv
 data/raw/transfermarkt/clubs.csv
 data/raw/transfermarkt/competitions.csv
 data/raw/transfermarkt/player_valuations.csv
+data/processed/players_master.parquet
 ```
 
-Optional Transfermarkt files can also be placed in `data/raw/transfermarkt/` if available.
+Large optional Transfermarkt files such as `appearances.csv`, `game_events.csv`, and `game_lineups.csv` are not included because they are not required by the current pipeline and exceed normal GitHub-friendly repository size.
 
-Build the processed master table:
-
-```bash
-python -m src.pipeline
-```
-
-Run the dashboard:
+Run the dashboard directly:
 
 ```bash
 streamlit run app.py
+```
+
+If you replace the raw data or want to rebuild the processed files, run:
+
+```bash
+python -m src.pipeline
 ```
 
 Then open the local URL shown by Streamlit, usually:
@@ -62,7 +63,7 @@ Then open the local URL shown by Streamlit, usually:
 http://localhost:8501
 ```
 
-If the raw data files are missing, the dashboard cannot produce the full player search and replacement outputs.
+If `data/processed/players_master.parquet` is missing, build it with `python -m src.pipeline` before starting the dashboard.
 
 ## Data Layout
 
