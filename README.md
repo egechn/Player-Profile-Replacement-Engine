@@ -4,6 +4,66 @@ This project builds player-level football profiles from Statslook performance da
 
 Statslook is the authoritative source for performance metrics. Transfermarkt data is used only for enrichment and must not replace Statslook performance metrics.
 
+## Quick Start
+
+This repository does not include the raw football datasets. To run the project on another computer, clone the repository, install the Python dependencies, add the data files, build the processed master table, and then start the Streamlit dashboard.
+
+```bash
+git clone https://github.com/egechn/Player-Profile-Replacement-Engine.git
+cd Player-Profile-Replacement-Engine
+```
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+On Windows, activate it with:
+
+```bash
+.venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Add the data files:
+
+```text
+data/raw/statslook/Statslook_Scouting_Master_Final.csv
+data/raw/transfermarkt/players.csv
+data/raw/transfermarkt/clubs.csv
+data/raw/transfermarkt/competitions.csv
+data/raw/transfermarkt/player_valuations.csv
+```
+
+Optional Transfermarkt files can also be placed in `data/raw/transfermarkt/` if available.
+
+Build the processed master table:
+
+```bash
+python -m src.pipeline
+```
+
+Run the dashboard:
+
+```bash
+streamlit run app.py
+```
+
+Then open the local URL shown by Streamlit, usually:
+
+```text
+http://localhost:8501
+```
+
+If the raw data files are missing, the dashboard cannot produce the full player search and replacement outputs.
+
 ## Data Layout
 
 ```text
