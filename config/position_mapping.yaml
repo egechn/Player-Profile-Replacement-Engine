@@ -1,0 +1,53 @@
+groups:
+  goalkeeper:
+    - goalkeeper
+    - gk
+  centre_back:
+    - centre-back
+    - center-back
+    - centre back
+    - center back
+    - cb
+  full_back:
+    - left-back
+    - right-back
+    - left back
+    - right back
+    - full-back
+    - full back
+    - lb
+    - rb
+    - lwb
+    - rwb
+  defensive_midfield:
+    - defensive midfield
+    - defensive midfielder
+    - dm
+    - cdm
+  central_midfield:
+    - central midfield
+    - central midfielder
+    - centre midfield
+    - centre midfielder
+    - cm
+  attacking_midfield:
+    - attacking midfield
+    - attacking midfielder
+    - am
+    - cam
+  winger:
+    - winger
+    - left winger
+    - right winger
+    - lw
+    - rw
+    - wide midfielder
+  forward:
+    - centre-forward
+    - center-forward
+    - centre forward
+    - center forward
+    - striker
+    - forward
+    - cf
+    - st

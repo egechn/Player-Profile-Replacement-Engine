@@ -1,0 +1,255 @@
+source:
+  name: Opta Power Rankings league table
+  article_url: https://theanalyst.com/articles/strongest-football-leagues-in-the-world-opta-power-rankings
+  iframe_url: https://dataviz.theanalyst.com/opta-power-rankings/?leagueRankings=true&limit=50
+  data_file: https://dataviz.theanalyst.com/opta-power-rankings/league-meta.json
+  article_published: 2025-11-04
+  data_last_updated: 2026-06-04
+  metric: seasonAverageRating
+reference_league: Premier League
+reference_rating: 91.84991066
+coefficient_formula: seasonAverageRating / reference_rating
+default_strength: 0.75
+league_similarity_weight: 0.12
+leagues:
+  Premier League: 1.0000
+  Bundesliga: 0.9398
+  La Liga: 0.9396
+  Serie A: 0.9345
+  Ligue 1: 0.9301
+  Brazilian Serie A: 0.9054
+  Belgian Pro League: 0.8854
+  Liga Portugal: 0.8838
+  EFL Championship: 0.8828
+  Argentine Primera Division: 0.8780
+  Danish Superliga: 0.8703
+  Ekstraklasa: 0.8634
+  Eliteserien: 0.8582
+  Turkish Super Lig: 0.8537
+  Eredivisie: 0.8502
+  Major League Soccer: 0.8481
+  2. Bundesliga: 0.8438
+  LaLiga 2: 0.8420
+  Swiss Super League: 0.8402
+  Russian Premier League: 0.8401
+  Czech First League: 0.8390
+  Allsvenskan: 0.8388
+  Greek Super League: 0.8385
+  Admiral Bundesliga: 0.8256
+  Serie B: 0.8234
+  Ligue 2: 0.8226
+  Romanian SuperLiga: 0.8192
+  Saudi Pro League: 0.8175
+  Bulgarian First League: 0.7799
+  Turkish First League: 0.7242
+league_metadata:
+  Premier League:
+    opta_league_name: English Premier League
+    opta_country: England
+    opta_global_rank: 1
+    opta_average_rating: 91.8499
+    opta_top10_rating: 94.4836
+    opta_top5_rating: 96.4882
+  Bundesliga:
+    opta_league_name: German Bundesliga
+    opta_country: Germany
+    opta_global_rank: 2
+    opta_average_rating: 86.3223
+    opta_top10_rating: 89.3811
+    opta_top5_rating: 92.5093
+  La Liga:
+    opta_league_name: Spanish La Liga
+    opta_country: Spain
+    opta_global_rank: 3
+    opta_average_rating: 86.3003
+    opta_top10_rating: 88.9571
+    opta_top5_rating: 91.8465
+  Serie A:
+    opta_league_name: Italian Serie A
+    opta_country: Italy
+    opta_global_rank: 4
+    opta_average_rating: 85.8364
+    opta_top10_rating: 89.4639
+    opta_top5_rating: 91.1682
+  Ligue 1:
+    opta_league_name: French Ligue 1
+    opta_country: France
+    opta_global_rank: 5
+    opta_average_rating: 85.4261
+    opta_top10_rating: 88.2809
+    opta_top5_rating: 90.3356
+  Brazilian Serie A:
+    opta_league_name: Brazilian Serie A
+    opta_country: Brazil
+    opta_global_rank: 6
+    opta_average_rating: 83.1570
+    opta_top10_rating: 84.9133
+    opta_top5_rating: 86.6067
+  Belgian Pro League:
+    opta_league_name: Belgian Jupiler Pro League
+    opta_country: Belgium
+    opta_global_rank: 7
+    opta_average_rating: 81.3193
+    opta_top10_rating: 83.3693
+    opta_top5_rating: 85.9629
+  Liga Portugal:
+    opta_league_name: Portuguese Primeira Liga
+    opta_country: Portugal
+    opta_global_rank: 8
+    opta_average_rating: 81.1752
+    opta_top10_rating: 84.3911
+    opta_top5_rating: 88.9605
+  EFL Championship:
+    opta_league_name: English Football League - Championship
+    opta_country: England
+    opta_global_rank: 9
+    opta_average_rating: 81.0906
+    opta_top10_rating: 83.5927
+    opta_top5_rating: 85.0541
+  Argentine Primera Division:
+    opta_league_name: Liga Profesional Argentina
+    opta_country: Argentina
+    opta_global_rank: 10
+    opta_average_rating: 80.6447
+    opta_top10_rating: 83.5157
+    opta_top5_rating: 84.2937
+  Danish Superliga:
+    opta_league_name: Danish Superligaen
+    opta_country: Denmark
+    opta_global_rank: 11
+    opta_average_rating: 79.9374
+    opta_top10_rating: 80.9090
+    opta_top5_rating: 83.6749
+  Ekstraklasa:
+    opta_league_name: Polish Ekstraklasa
+    opta_country: Poland
+    opta_global_rank: 12
+    opta_average_rating: 79.3024
+    opta_top10_rating: 80.7749
+    opta_top5_rating: 82.2733
+  Eliteserien:
+    opta_league_name: Norwegian Eliteserien
+    opta_country: Norway
+    opta_global_rank: 14
+    opta_average_rating: 78.8347
+    opta_top10_rating: 80.5904
+    opta_top5_rating: 83.3574
+  Turkish Super Lig:
+    opta_league_name: Turkish Super Lig
+    opta_country: Turkey
+    opta_global_rank: 15
+    opta_average_rating: 78.4098
+    opta_top10_rating: 81.1706
+    opta_top5_rating: 84.1122
+  Eredivisie:
+    opta_league_name: Dutch Eredivisie
+    opta_country: Netherlands
+    opta_global_rank: 18
+    opta_average_rating: 78.0865
+    opta_top10_rating: 81.3381
+    opta_top5_rating: 83.8950
+  Major League Soccer:
+    opta_league_name: US Major League Soccer
+    opta_country: USA
+    opta_global_rank: 20
+    opta_average_rating: 77.9044
+    opta_top10_rating: 80.9084
+    opta_top5_rating: 82.6621
+  2. Bundesliga:
+    opta_league_name: German Bundesliga Zwei
+    opta_country: Germany
+    opta_global_rank: 22
+    opta_average_rating: 77.5022
+    opta_top10_rating: 78.8817
+    opta_top5_rating: 80.1030
+  LaLiga 2:
+    opta_league_name: Spanish Segunda Division
+    opta_country: Spain
+    opta_global_rank: 25
+    opta_average_rating: 77.3415
+    opta_top10_rating: 79.8032
+    opta_top5_rating: 80.4857
+  Swiss Super League:
+    opta_league_name: Brack Super League
+    opta_country: Switzerland
+    opta_global_rank: 26
+    opta_average_rating: 77.1805
+    opta_top10_rating: 78.2349
+    opta_top5_rating: 79.9434
+  Russian Premier League:
+    opta_league_name: Russian Premier League
+    opta_country: Russia
+    opta_global_rank: 27
+    opta_average_rating: 77.1571
+    opta_top10_rating: 79.7792
+    opta_top5_rating: 82.5183
+  Czech First League:
+    opta_league_name: Czech First League
+    opta_country: Czechia
+    opta_global_rank: 28
+    opta_average_rating: 77.0589
+    opta_top10_rating: 79.1776
+    opta_top5_rating: 82.1772
+  Allsvenskan:
+    opta_league_name: Swedish Allsvenskan
+    opta_country: Sweden
+    opta_global_rank: 29
+    opta_average_rating: 77.0464
+    opta_top10_rating: 79.1922
+    opta_top5_rating: 80.7862
+  Greek Super League:
+    opta_league_name: Greek Super League
+    opta_country: Greece
+    opta_global_rank: 30
+    opta_average_rating: 77.0144
+    opta_top10_rating: 79.3589
+    opta_top5_rating: 83.7419
+  Admiral Bundesliga:
+    opta_league_name: Austrian Bundesliga
+    opta_country: Austria
+    opta_global_rank: 34
+    opta_average_rating: 75.8321
+    opta_top10_rating: 76.5484
+    opta_top5_rating: 78.7797
+  Serie B:
+    opta_league_name: Italian Serie B
+    opta_country: Italy
+    opta_global_rank: 35
+    opta_average_rating: 75.6276
+    opta_top10_rating: 77.5852
+    opta_top5_rating: 80.0423
+  Ligue 2:
+    opta_league_name: French Ligue 2
+    opta_country: France
+    opta_global_rank: 37
+    opta_average_rating: 75.5623
+    opta_top10_rating: 77.3476
+    opta_top5_rating: 78.4495
+  Romanian SuperLiga:
+    opta_league_name: Romania Liga I
+    opta_country: Romania
+    opta_global_rank: 39
+    opta_average_rating: 75.2393
+    opta_top10_rating: 77.3120
+    opta_top5_rating: 79.3976
+  Saudi Pro League:
+    opta_league_name: Saudi Arabian League
+    opta_country: Saudi Arabia
+    opta_global_rank: 42
+    opta_average_rating: 75.0851
+    opta_top10_rating: 78.6374
+    opta_top5_rating: 83.3132
+  Bulgarian First League:
+    opta_league_name: Bulgaria First League
+    opta_country: Bulgaria
+    opta_global_rank: 59
+    opta_average_rating: 71.6338
+    opta_top10_rating: 74.3424
+    opta_top5_rating: 77.0945
+  Turkish First League:
+    opta_league_name: Turkish 1. Lig
+    opta_country: Turkey
+    opta_global_rank: 113
+    opta_average_rating: 66.5197
+    opta_top10_rating: 69.4960
+    opta_top5_rating: 71.0366

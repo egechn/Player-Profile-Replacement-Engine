@@ -1,0 +1,50 @@
+# macOS / editor noise
+.DS_Store
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+src/.venv/
+
+# Local data and generated datasets
+*.csv
+*.tsv
+*.parquet
+*.db
+*.sqlite
+*.sqlite3
+*.html
+
+# Raw/processed football datasets
+data/raw/*
+data/processed/*
+raw data/
+BI_Dashboards_Data/
+
+# Keep directory skeletons
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Generated or exploratory assets
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ipynb
+
+# Local scratch folders/files from older experiments
+Desktop/
+anaconda_projects/
+sql_st_score.txt
+docker-compose.yml

@@ -1,0 +1,4 @@
+minimum_fuzzy_score: 90
+same_team_bonus: 5
+same_dob_bonus: 8
+review_confidence_threshold: 90

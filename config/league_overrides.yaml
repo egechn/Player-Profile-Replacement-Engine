@@ -1,0 +1,15 @@
+competition_display_names:
+  A1: Admiral Bundesliga
+  L1: Bundesliga
+  GB1: Premier League
+  GB2: EFL Championship
+
+club_league_overrides:
+  # Leicester City is marked as GB1 in the local Kaggle clubs.csv snapshot.
+  # Keep this as EFL Championship for the current scouting context; change to
+  # EFL League One if you want a 2026/27 forward-looking league context.
+  1003:
+    league_id: GB2
+    league_name: EFL Championship
+    league_country: England
+    domestic_competition_id: GB2

@@ -1,0 +1,3886 @@
+description: Authoritative team-to-league mapping provided by the user. Statslook
+  teamName should use this before Transfermarkt league metadata.
+leagues:
+  2. Bundesliga:
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+  Admiral Bundesliga:
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+  Allsvenskan:
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+  Arjantin Liga Prof.:
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+  Belgian Pro League:
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+  Brazilian Série A:
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+  Bundesliga:
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+  Championship:
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+  Chance Liga:
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+  Danish Superliga:
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+  Ekstraklasa:
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+  Eliteserien:
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+  Eredivisie:
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+  La Liga:
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+  La Liga 2:
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+  Liga Portugal:
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+  Ligue 1:
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+  Ligue 2:
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+  MLS (A & B):
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+  Parva Liga:
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+  Premier League:
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+  Romania SuperLiga:
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+  Russian Premier League:
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+  Saudi Pro League:
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+  Serie A (İtalya):
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+  Serie B (İtalya):
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+  Super League Greece:
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+  Swiss Super League:
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+  Trendyol 1. Lig:
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+  Trendyol Süper Lig:
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+source: user_provided_team_league_mapping
+teams:
+  AC Milan:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  AEK Athens:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  AFC Bournemouth:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  AGF:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  AIK:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  AVS:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  AZ:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Adana Demirspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Ajax:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Akhmat Grozny:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Akron:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Al Ahli:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Akhdoud:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Ettifaq:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Fateh:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Hazm:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Hilal:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Ittihad:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Khaleej:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Kholood:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Najma:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Nassr:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Riyadh:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Shabab:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al Taawoun:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al-Fayha:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Al-Qadsiah:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Alanyaspor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Albacete:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Almería:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Altach:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Alverca:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Amed SK:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Amiens SC:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Anderlecht:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Angers SCO:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Annecy:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Antalyaspor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Antwerp:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Arda:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Argeş:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Aris:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Arouca:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Arsenal:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Asteras Tripolis:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Aston Villa:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Atalanta:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Athletic Club:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Athletico PR:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Atlanta United:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Atlético Madrid:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Atlético Mineiro:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Atromitos:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Austin:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Austria Klagenfurt:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Austria Lustenau:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Austria Wien:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Auxerre:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Avellino:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  BK Häcken:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Bahia:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Baltika Kaliningrad:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Bandırmaspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Baník Ostrava:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Bari 1908:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Basel:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Bastia:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Bayer 04 Leverkusen:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Benfica:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Beroe:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Beşiktaş:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Birmingham City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Blackburn Rovers:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Blau-Weiß Linz:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Boca Juniors:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Bodrum FK:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Bodø/Glimt:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Bohemians 1905:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Bologna:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Boluspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Borussia Dortmund:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Borussia Mönchengladbach:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Botafogo:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Botev Plovdiv:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Botev Vratsa:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Botoşani:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Boulogne:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Bragantino:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Brann:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Brentford:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Brest:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Brighton & Hove Albion:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Bristol City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Brøndby IF:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Burgos:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Burnley:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  CF Montréal:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  CFR Cluj:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  CSKA 1948 Sofia:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  CSKA Moskva:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  CSKA Sofia:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Cagliari:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Calcio Padova:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Cardiff City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Carrarese:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Casa Pia:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Castellón:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Catanzaro:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Celta de Vigo:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Central Cordoba SdE:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Cercle Brugge:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Cesena:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Ceuta:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Chapecoense:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Charlotte:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Chelsea:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Cherno More:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Chicago Fire:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Cincinnati:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Clermont:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Club Brugge:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Colorado Rapids:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Columbus Crew:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Como:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Corinthians:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Coritiba:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Coventry City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Cracovia:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Cremonese:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Cruzeiro:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Crystal Palace:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Csikszereda:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Cultural Leonesa:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Cádiz:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Córdoba:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  DC United:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  DSC Arminia Bielefeld:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Dallas:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Damac FC:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Darmstadt 98:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Defensa y Justicia:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Dender:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Deportivo Alavés:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Deportivo La Coruña:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Deportivo Riestra:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Dinamo Bucureşti:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Dinamo Moskva:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Djurgårdens IF:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Dobrudzha 1919:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Dunkerque:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Dynamo Dresden:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Dynamo Makhachkala:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Eintracht Braunschweig:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Eintracht Frankfurt:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Elche:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Elversberg:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Empoli:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Erzurumspor FK:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Esenler Erokspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Espanyol:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Estoril:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Estrela Amadora:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Estudiantes:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Everton:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Excelsior:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Eyüpspor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  FC Andorra:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  FC Augsburg:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  FC Barcelona:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  FC Bayern München:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  FC Groningen:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  FC Köln:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  FC København:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  FC Midtjylland:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  FC Twente:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  FC Union Berlin:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  FC Utrecht:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  FC Volendam:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  FCSB:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  FK Nizjni Novgorod:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  FSV Mainz 05:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Famalicão:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Farul Constanța:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Fatih Karagümrük:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Fenerbahçe:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Feyenoord:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Fiorentina:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Flamengo:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Fluminense:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Fortuna Düsseldorf:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Fortuna Sittard:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Fredericia:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Fredrikstad:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Frosinone:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Fulham:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  GAIS:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Galatasaray:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Gaziantep F.K.:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Genk:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Genoa:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Gent:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Gençlerbirliği:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Getafe:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Gil Vicente:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Gimnasia y Esgrima Mendoza:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Girona:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Go Ahead Eagles:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Granada:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Grasshopper:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Grenoble Foot 38:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Grêmio:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Guingamp:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Górnik Zabrze:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Göztepe:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Halmstads BK:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  HamKam:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Hamburger SV:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Hammarby IF:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Hannover 96:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Hartberg:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Hatayspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Haugesund:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Heidenheim:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Hellas Verona:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Heracles Almelo:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Hermannstadt:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Hertha BSC:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Holstein Kiel:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Houston Dynamo:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Hradec Králové:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Huddersfield Town:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Huesca:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Hull City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  IF Brommapojkarna:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  IF Elfsborg:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  IFK Göteborg:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  IFK Norrköping:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  IFK Värnamo:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  IK Sirius:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Independiente:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Instituto:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Inter:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Inter Miami:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Internacional:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Ipswich Town:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Iğdır FK:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Jablonec:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Jagiellonia Białystok:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Juve Stabia:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Juventus:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  KFUM Oslo:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Kaiserslautern:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Kalmar FF:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Karlsruher SC:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Karviná:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Kasımpaşa:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Kayserispor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Keçiörengücü:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Kifisia:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Kocaelispor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Konyaspor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Korona Kielce:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Krasnodar:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Kristiansund:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Krylya Sovetov:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  LA Galaxy:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  LASK:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  LOSC Lille:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  La Louvière:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Lanús:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Larissa:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Las Palmas:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Lausanne Sport:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Laval:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Lazio:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Le Havre:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Le Mans:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Lecce:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Lech Poznań:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Leeds United:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Leganés:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Legia Warszawa:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Leicester City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Lens:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Levadiakos:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Levante:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Levski Sofia:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Lillestrøm:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Liverpool:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Lokomotiv Moskva:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Lokomotiv Plovdiv:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Lokomotiv Sofia 1929:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Lorient:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Los Angeles FC:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Ludogorets:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Lugano:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Luzern:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Magdeburg:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Mallorca:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Malmö FF:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Manchester City:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Manchester United:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Manisa FK:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Mantova:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Mechelen:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Metaloglobus:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Metz:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Middlesbrough:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Millwall:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Minnesota United:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Mirandés:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Mirassol:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Mjällby AIF:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Mladá Boleslav:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Modena:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Molde:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Monaco:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Montana:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Montpellier:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Monza:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Moreirense:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Málaga:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  NAC Breda:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  NEC Nijmegen:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  NEOM SC:
+    domestic_competition_id: saudi-pro-league
+    league_country: Saudi Arabia
+    league_display_name: Saudi Pro League
+    league_id: saudi-pro-league
+    league_name: Saudi Pro League
+    source_league_name: Saudi Pro League
+  Nacional:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Nancy:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Nantes:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Napoli:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Nashville SC:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  New England:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  New York City:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  New York RB:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Newcastle United:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Newell's Old Boys:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Nice:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Nordsjælland:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Norwich City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Nottingham Forest:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Nürnberg:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  OFI:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  OH Leuven:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Odd:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Odense BK:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Olympiacos F.C.:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Olympique Lyonnais:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Olympique Marseille:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Orenburg:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Orlando City:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Osasuna:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Otelul:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  PAOK:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  PEC Zwolle:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  PSV:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Paderborn:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Palermo:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Palmeiras:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Panaitolikos:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Panathinaikos:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Panserraikos:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Pardubice:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Paris:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Paris Saint Germain:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Parma:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Pau:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Pendikspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Pescara:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Petrolul 52:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Philadelphia Union:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Piast Gliwice:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Pisa:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Platense:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Plymouth Argyle:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Pogoń Szczecin:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Portland Timbers:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Porto:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Preston North End:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Preußen Münster:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Puszcza Niepołomice:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Queens Park Rangers:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  RB Leipzig:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  RB Salzburg:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Racing Santander:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Radomiak Radom:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Raków Częstochowa:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Randers FC:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Rapid Bucuresti:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Rapid Wien:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Rayo Vallecano:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Real Betis:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Real Madrid:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Real Oviedo:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Real Salt Lake:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Real Sociedad:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Real Sociedad II:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Real Valladolid:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Real Zaragoza:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Red Star:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Reggiana:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Reims:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Remo:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Rennes:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Rio Ave:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Rizespor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Rodez:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Roma:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Rosenborg:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Rostov:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Rotherham United:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Rubin Kazan:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Ruch Chorzów:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  SC Freiburg:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  SC Heerenveen:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  SD Eibar:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  SJ Earthquakes:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Saint-Étienne:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  Sakaryaspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Sampdoria:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Samsunspor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  San Diego:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  San Lorenzo:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Sandefjord:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Santa Clara:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Santos:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Sarpsborg 08:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Sarıyer SK:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Sassuolo:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Schalke 04:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Seattle Sounders:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Septemvri Sofia:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Serik Belediyespor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Servette:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Sevilla:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Sheffield Wednesday:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Sigma Olomouc:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Silkeborg IF:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Sint-Truiden:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Sion:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Sivasspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Slavia Praha:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Slavia Sofia:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Slovan Liberec:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Slovácko:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Sochi:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Southampton:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  SpVgg Greuther Fürth:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  Sparta Praha:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Sparta Rotterdam:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Spartak Moskva:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Spartak Varna:
+    domestic_competition_id: bulgarian-first-league
+    league_country: Bulgaria
+    league_display_name: Bulgarian First League
+    league_id: bulgarian-first-league
+    league_name: Bulgarian First League
+    source_league_name: Parva Liga
+  Spezia:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Sporting Braga:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Sporting CP:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Sporting Charleroi:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Sporting Gijón:
+    domestic_competition_id: laliga-2
+    league_country: Spain
+    league_display_name: LaLiga 2
+    league_id: laliga-2
+    league_name: LaLiga 2
+    source_league_name: La Liga 2
+  Sporting KC:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  St. Gallen:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  St. Louis City:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  St. Pauli:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Stal Mielec:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Standard Liège:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Stoke City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Strasbourg:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Strømsgodset:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Sturm Graz:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Sunderland:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Swansea City:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  São Paulo:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Sønderjyske Fodbold:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Südtirol:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  TSG Hoffenheim:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Talleres Córdoba:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Telstar:
+    domestic_competition_id: eredivisie
+    league_country: Netherlands
+    league_display_name: Eredivisie
+    league_id: eredivisie
+    league_name: Eredivisie
+    source_league_name: Eredivisie
+  Teplice:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Thun:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Tondela:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Torino:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Toronto:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Tottenham Hotspur:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Toulouse:
+    domestic_competition_id: ligue-1
+    league_country: France
+    league_display_name: Ligue 1
+    league_id: ligue-1
+    league_name: Ligue 1
+    source_league_name: Ligue 1
+  Trabzonspor:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  Tromsø:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Troyes:
+    domestic_competition_id: ligue-2
+    league_country: France
+    league_display_name: Ligue 2
+    league_id: ligue-2
+    league_name: Ligue 2
+    source_league_name: Ligue 2
+  UTA Arad:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Udinese:
+    domestic_competition_id: serie-a
+    league_country: Italy
+    league_display_name: Serie A
+    league_id: serie-a
+    league_name: Serie A
+    source_league_name: Serie A (İtalya)
+  Union Saint-Gilloise:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Unirea Slobozia:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Universitatea Cluj:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Universitatea Craiova:
+    domestic_competition_id: romanian-superliga
+    league_country: Romania
+    league_display_name: Romanian SuperLiga
+    league_id: romanian-superliga
+    league_name: Romanian SuperLiga
+    source_league_name: Romania SuperLiga
+  Unión Santa Fe:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  Valencia:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Vancouver Whitecaps:
+    domestic_competition_id: major-league-soccer
+    league_country: United States
+    league_display_name: Major League Soccer
+    league_id: major-league-soccer
+    league_name: Major League Soccer
+    source_league_name: MLS (A & B)
+  Vanspor FK:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Vasco da Gama:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Vejle Boldklub:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Venezia:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  VfB Stuttgart:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  VfL Bochum 1848:
+    domestic_competition_id: 2-bundesliga
+    league_country: Germany
+    league_display_name: 2. Bundesliga
+    league_id: 2-bundesliga
+    league_name: 2. Bundesliga
+    source_league_name: 2. Bundesliga
+  VfL Wolfsburg:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  Viborg FF:
+    domestic_competition_id: danish-superliga
+    league_country: Denmark
+    league_display_name: Danish Superliga
+    league_id: danish-superliga
+    league_name: Danish Superliga
+    source_league_name: Danish Superliga
+  Viking:
+    domestic_competition_id: eliteserien
+    league_country: Norway
+    league_display_name: Eliteserien
+    league_id: eliteserien
+    league_name: Eliteserien
+    source_league_name: Eliteserien
+  Viktoria Plzeň:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Villarreal:
+    domestic_competition_id: la-liga
+    league_country: Spain
+    league_display_name: La Liga
+    league_id: la-liga
+    league_name: La Liga
+    source_league_name: La Liga
+  Virtus Entella:
+    domestic_competition_id: serie-b
+    league_country: Italy
+    league_display_name: Serie B
+    league_id: serie-b
+    league_name: Serie B
+    source_league_name: Serie B (İtalya)
+  Vitória:
+    domestic_competition_id: brazilian-serie-a
+    league_country: Brazil
+    league_display_name: Brazilian Serie A
+    league_id: brazilian-serie-a
+    league_name: Brazilian Serie A
+    source_league_name: Brazilian Série A
+  Vitória Guimarães:
+    domestic_competition_id: liga-portugal
+    league_country: Portugal
+    league_display_name: Liga Portugal
+    league_id: liga-portugal
+    league_name: Liga Portugal
+    source_league_name: Liga Portugal
+  Volos NFC:
+    domestic_competition_id: greek-super-league
+    league_country: Greece
+    league_display_name: Greek Super League
+    league_id: greek-super-league
+    league_name: Greek Super League
+    source_league_name: Super League Greece
+  Västerås SK:
+    domestic_competition_id: allsvenskan
+    league_country: Sweden
+    league_display_name: Allsvenskan
+    league_id: allsvenskan
+    league_name: Allsvenskan
+    source_league_name: Allsvenskan
+  Vélez Sarsfield:
+    domestic_competition_id: argentine-primera-division
+    league_country: Argentina
+    league_display_name: Argentine Primera Division
+    league_id: argentine-primera-division
+    league_name: Argentine Primera Division
+    source_league_name: Arjantin Liga Prof.
+  WSG Tirol:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Warta Poznań:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Watford:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  Werder Bremen:
+    domestic_competition_id: bundesliga
+    league_country: Germany
+    league_display_name: Bundesliga
+    league_id: bundesliga
+    league_name: Bundesliga
+    source_league_name: Bundesliga
+  West Bromwich Albion:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
+  West Ham United:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Westerlo:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Widzew Łódź:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Winterthur:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Wolfsberger AC:
+    domestic_competition_id: admiral-bundesliga
+    league_country: Austria
+    league_display_name: Admiral Bundesliga
+    league_id: admiral-bundesliga
+    league_name: Admiral Bundesliga
+    source_league_name: Admiral Bundesliga
+  Wolverhampton Wanderers:
+    domestic_competition_id: premier-league
+    league_country: England
+    league_display_name: Premier League
+    league_id: premier-league
+    league_name: Premier League
+    source_league_name: Premier League
+  Young Boys:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Zagłębie Lubin:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Zenit:
+    domestic_competition_id: russian-premier-league
+    league_country: Russia
+    league_display_name: Russian Premier League
+    league_id: russian-premier-league
+    league_name: Russian Premier League
+    source_league_name: Russian Premier League
+  Zlín:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  Zulte-Waregem:
+    domestic_competition_id: belgian-pro-league
+    league_country: Belgium
+    league_display_name: Belgian Pro League
+    league_id: belgian-pro-league
+    league_name: Belgian Pro League
+    source_league_name: Belgian Pro League
+  Zürich:
+    domestic_competition_id: swiss-super-league
+    league_country: Switzerland
+    league_display_name: Swiss Super League
+    league_id: swiss-super-league
+    league_name: Swiss Super League
+    source_league_name: Swiss Super League
+  Çorum FK:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  Ümraniyespor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  České Budějovice:
+    domestic_competition_id: czech-first-league
+    league_country: Czech Republic
+    league_display_name: Czech First League
+    league_id: czech-first-league
+    league_name: Czech First League
+    source_league_name: Chance Liga
+  İstanbul Başakşehir:
+    domestic_competition_id: turkish-super-lig
+    league_country: Turkey
+    league_display_name: Turkish Super Lig
+    league_id: turkish-super-lig
+    league_name: Turkish Super Lig
+    source_league_name: Trendyol Süper Lig
+  İstanbulspor:
+    domestic_competition_id: turkish-first-league
+    league_country: Turkey
+    league_display_name: Turkish First League
+    league_id: turkish-first-league
+    league_name: Turkish First League
+    source_league_name: Trendyol 1. Lig
+  ŁKS Łódź:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
+  Śląsk Wrocław:
+    domestic_competition_id: ekstraklasa
+    league_country: Poland
+    league_display_name: Ekstraklasa
+    league_id: ekstraklasa
+    league_name: Ekstraklasa
+    source_league_name: Ekstraklasa
