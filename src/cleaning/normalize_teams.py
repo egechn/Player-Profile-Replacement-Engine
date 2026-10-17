@@ -40,6 +40,8 @@ DEFAULT_TEAM_ALIASES = {
     "sk rapid": "rapid wien",
     "sk rapid wien": "rapid wien",
     "sportklub rapid": "rapid wien",
+    "athletic bilbao": "athletic",
+    "athletic club bilbao": "athletic",
 }
 
 

@@ -10,6 +10,56 @@ statslook:
   nationality_id: nationalityId
   team_id: teamId
 
+# StatsLook API field (season totals) -> pipeline column. Used by
+# src/data_sources/statslook_fetch.py.
+statslook_api:
+  minutes_played: Min
+  goals: Gol
+  assists: Asist
+  expected_goals: xG
+  expected_goals_on_target: xGoT
+  shots_off_target: Shots_Off_Target
+  shots_total: Shots_Total
+  shots_on_target: Shots_on_Target
+  shots_blocked: Shots_Blocked
+  key_passes: Key_Passes
+  chances_created: Chances_Created
+  big_chances_created: Big_Chances_Created
+  big_chances_missed: Big_Chances_Missed
+  passes: Passes
+  accurate_passes: Accurate_Passes
+  passes_in_final_third: Passes_Final_Third
+  backward_passes: Backward_Passes
+  long_balls: Long_Balls
+  long_balls_won: Long_Balls_Won
+  through_balls: Through_Balls
+  through_balls_won: Through_Balls_Won
+  total_crosses: Total_Crosses
+  accurate_crosses: Accurate_Crosses
+  dribble_attempts: Dribble_Attempts
+  successful_dribbles: Successful_Dribbles
+  dribbled_past: Dribbled_Past
+  tackles: Tackles
+  tackles_won: Tackles_Won
+  interceptions: Interception
+  ball_recovery: Ball_Recovery
+  clearances: Clearences
+  blocked_shots: Blocked_Shots
+  total_duels: Total_Duels
+  duels_won: Duels_Won
+  duels_lost: Duels_Lost
+  aerial_duels: Aerials
+  aeriels_won: Aerials_Won
+  aeriels_lost: Aerial_Lost
+  fouls: Fouls
+  fouls_drawn: Fouls_Drawn
+  dispossessed: Dispossed
+  possession_lost: Possession_Lost
+  turn_over: Turn_Over
+  touches: Touches
+  yellowcards: Yellow_Card
+  goals_conceded: Goals_Conceded
+
 numeric_columns:
   - appearances
   - height

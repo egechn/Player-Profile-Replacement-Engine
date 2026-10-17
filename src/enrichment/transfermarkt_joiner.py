@@ -12,6 +12,7 @@ from src.data_sources.transfermarkt_loader import (
     DEFAULT_TRANSFERMARKT_DIR,
     missing_transfermarkt_files,
 )
+from src.enrichment.current_club import add_current_club
 from src.enrichment.entity_matching import match_players
 from src.enrichment.team_league_mapping import apply_user_team_league_mapping
 from src.features.league_adjustment import apply_league_strength_columns
@@ -64,10 +65,13 @@ def build_players_master(
     transfermarkt_dir: str | Path | None = None,
     processed_dir: str | Path = "data/processed",
     allow_missing_transfermarkt: bool = True,
+    season: str | None = None,
 ) -> pd.DataFrame:
     statslook_source = find_statslook_source(statslook_path)
     processed_dir = Path(processed_dir)
-    statslook_clean = clean_statslook(source_path=statslook_source)
+    statslook_clean = add_current_club(clean_statslook(source_path=statslook_source))
+    if season:
+        statslook_clean.insert(0, "season", season)
     write_table(statslook_clean, processed_dir / "statslook_clean.parquet")
 
     tm_dir = transfermarkt_dir or DEFAULT_TRANSFERMARKT_DIR

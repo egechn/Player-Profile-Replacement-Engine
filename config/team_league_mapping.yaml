@@ -489,6 +489,13 @@ teams:
     league_id: la-liga
     league_name: La Liga
     source_league_name: La Liga
+  Charlton Athletic:
+    domestic_competition_id: efl-championship
+    league_country: England
+    league_display_name: EFL Championship
+    league_id: efl-championship
+    league_name: EFL Championship
+    source_league_name: Championship
   Athletico PR:
     domestic_competition_id: brazilian-serie-a
     league_country: Brazil

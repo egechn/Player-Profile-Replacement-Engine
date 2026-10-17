@@ -1,23 +1,37 @@
 from __future__ import annotations
 
 import inspect
-from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 
 from src.cleaning.normalize_positions import position_group_label
+from src.data_sources.statslook_fetch import fetch_statslook, load_fetch_config
 from src.engine.replacement import recommend_replacements
-from src.engine.similarity import find_similar_players, resolve_target_index
+from src.engine.similarity import find_similar_players
 from src.enrichment.transfermarkt_joiner import build_players_master
+from src.features.combined_seasons import combine_season_profiles, combined_label, combined_parts
 from src.features.league_adjustment import apply_league_strength_columns
-from src.features.profile_scores import compute_profile_scores, profile_vector_columns
-from src.io_utils import read_table, resolve_project_path
-from src.visualization.radar import build_profile_radar
-from src.visualization.tables import format_player_table
-
-
-MASTER_PATH = Path("data/processed/players_master.parquet")
+from src.features.profile_scores import (
+    compute_profile_scores,
+    profile_group,
+    profile_vector_columns,
+    role_column,
+)
+from src.io_utils import read_table
+from src.seasons import (
+    available_seasons,
+    default_min_minutes,
+    base_season,
+    default_season,
+    is_league_only,
+    master_path_for,
+    processed_dir_for,
+    statslook_source_for,
+)
+from src.visualization.radar import build_comparison_radar, build_profile_radar
+from src.visualization.tables import focus_areas, format_player_table
+from src.watchlist import add_to_watchlist, load_watchlist, save_watchlist
 
 
 def format_metric(value, number_format: str = "{:.1f}", missing: str = "n/a") -> str:
@@ -28,30 +42,140 @@ def format_metric(value, number_format: str = "{:.1f}", missing: str = "n/a") ->
 
 
 def stretch_kwargs(streamlit_func) -> dict[str, str | bool]:
-    if "width" in inspect.signature(streamlit_func).parameters:
-        return {"width": "stretch"}
-    return {"use_container_width": True}
+    # Older Streamlit has an integer-only `width`; only newer versions drop use_container_width.
+    if "use_container_width" in inspect.signature(streamlit_func).parameters:
+        return {"use_container_width": True}
+    return {"width": "stretch"}
 
 
 @st.cache_data(show_spinner=False)
-def load_master(rebuild: bool = False) -> pd.DataFrame:
-    master_path = resolve_project_path(MASTER_PATH)
+def load_master(season: str, rebuild: bool = False) -> pd.DataFrame:
+    parts = combined_parts(season)
+    if len(parts) > 1:
+        return combine_season_profiles([load_master(part, rebuild) for part in parts], season)
+    master_path = master_path_for(season)
     csv_fallback = master_path.with_suffix(".csv")
     if rebuild or (not master_path.exists() and not csv_fallback.exists()):
-        df = build_players_master()
+        df = build_players_master(
+            statslook_path=statslook_source_for(season),
+            processed_dir=processed_dir_for(season),
+            season=season,
+        )
     else:
         df = read_table(master_path)
+    if "season" not in df.columns:
+        df.insert(0, "season", season)
+    # Percentiles are computed within the loaded season only.
     return compute_profile_scores(apply_league_strength_columns(df))
+
+
+def player_table_with_comparison(
+    players: pd.DataFrame, key: str, target: pd.Series, profile_cols: list[str]
+) -> None:
+    """Player table; clicking a row shows that player's profile next to the target's."""
+    if focus_areas(players):
+        st.caption(f"Search focused on the selected player's strengths: {focus_areas(players)}.")
+    table = format_player_table(players)
+    event = st.dataframe(
+        table,
+        hide_index=True,
+        # A new target resets the selection.
+        key=f"{key}_{target.get('season')}_{target.get('statslook_row_id')}",
+        on_select="rerun",
+        selection_mode="single-row",
+        **stretch_kwargs(st.dataframe),
+    )
+    target_name = target.get("displayName") or target.get("playerName")
+    st.download_button(
+        "Download table (CSV)",
+        table.to_csv(index=False).encode("utf-8"),
+        file_name=f"{key.replace('_table', '')}_{target_name}_{target.get('season')}.csv".replace(" ", "_"),
+        mime="text/csv",
+        key=f"download_{key}",
+    )
+    rows = event.selection.rows if event else []
+    if not rows or rows[0] >= len(players):
+        st.caption("Click a row to compare that player's profile with the selected player.")
+        return
+    candidate = players.iloc[rows[0]]
+    candidate_name = candidate.get("displayName") or candidate.get("playerName")
+    if st.button(f"☆ Add {candidate_name} to watchlist", key=f"watch_{key}"):
+        if add_to_watchlist(candidate, table.iloc[rows[0]], similar_to=f"{target_name} ({target.get('season')})"):
+            st.success(f"{candidate_name} added to the watchlist.")
+        else:
+            st.info(f"{candidate_name} is already on the watchlist.")
+    target_label = f"{target_name} ({target.get('season')})"
+    candidate_label = f"{candidate_name} ({candidate.get('season')})"
+    labelled_target, labelled_candidate = target.copy(), candidate.copy()
+    labelled_target["playerName"], labelled_candidate["playerName"] = target_label, candidate_label
+    chart_left, chart_right = st.columns([1, 1])
+    with chart_left:
+        st.plotly_chart(
+            build_profile_radar(candidate, profile_cols, title=f"{candidate_label} profile"),
+            **stretch_kwargs(st.plotly_chart),
+        )
+    with chart_right:
+        comparison = build_comparison_radar(
+            labelled_target, labelled_candidate, profile_cols, title="Profile comparison"
+        )
+        comparison.update_layout(legend=dict(orientation="h", x=0, y=-0.12))
+        st.plotly_chart(comparison, **stretch_kwargs(st.plotly_chart))
 
 
 st.set_page_config(page_title="Player Profile Replacement Engine", layout="wide")
 st.title("Player Profile Replacement Engine")
 
 with st.sidebar:
+    seasons = available_seasons()
+    if not seasons:
+        st.error("No StatsLook data found under data/raw/statslook/.")
+        st.stop()
+    # Last two seasons together: minutes-weighted profile, steadier early in a season.
+    full_seasons = [s for s in seasons if not is_league_only(s)]
+    # Newest first, each season followed by its league-only variant, the combination last.
+    seasons = sorted(seasons, key=lambda s: (base_season(s), not is_league_only(s)))
+    if len(full_seasons) >= 2:
+        seasons = [combined_label(full_seasons[-2:])] + seasons
+    season = st.selectbox(
+        "Season",
+        seasons[::-1],
+        index=seasons[::-1].index(default_season()),
+    )
     rebuild = st.button("Rebuild master table")
-    df = load_master(rebuild=rebuild)
+    fetch_config = load_fetch_config()
+    if st.button(f"Fetch {fetch_config.get('season', '')} from StatsLook"):
+        with st.spinner("Fetching from StatsLook and building the season..."):
+            try:
+                fetched = fetch_statslook()
+                build_players_master(
+                    statslook_path=fetched,
+                    processed_dir=processed_dir_for(fetch_config["season"]),
+                    season=fetch_config["season"],
+                )
+                st.cache_data.clear()
+                st.rerun()
+            except (SystemExit, Exception) as error:
+                st.error(f"Fetch failed: {error}")
+    df = load_master(season, rebuild=rebuild)
+    candidate_season = st.selectbox(
+        "Find similar players from",
+        seasons[::-1],
+        index=seasons[::-1].index(season),
+        help="Compare the selected player's profile in the season above with players from this season.",
+    )
+    pool = df if candidate_season == season else load_master(candidate_season)
 
-    min_minutes = st.slider("Minimum minutes", 0, 3000, 600, 100)
+    season_minutes = pd.to_numeric(pool["Min"], errors="coerce").fillna(0)
+    max_minutes = int(max(season_minutes.max(), 100) // 50 * 50 + 50)
+    min_minutes = st.slider(
+        "Minimum minutes",
+        0,
+        max_minutes,
+        min(default_min_minutes(candidate_season, season_minutes), max_minutes),
+        50,
+        key=f"min_minutes_{candidate_season}",
+        help="Default comes from config/seasons.yaml (min_minutes) or 20% of a regular starter's minutes this season.",
+    )
     max_age = st.slider("Maximum age", 16, 40, 32, 1)
     max_market_value = st.number_input(
         "Maximum market value EUR",
@@ -61,27 +185,47 @@ with st.sidebar:
     )
     position_values = sorted(
         value
-        for value in df["position_group"].dropna().astype(str).unique().tolist()
+        for value in pool["position_group"].dropna().astype(str).unique().tolist()
         if not value.replace("_", "").replace(".", "").isdigit()
     )
     position_labels = {position_group_label(value): value for value in position_values}
     selected_position_labels = st.multiselect("Position groups", sorted(position_labels))
-    leagues = sorted(df["league_display_name"].dropna().unique().tolist())
+    scope_labels = {
+        "Same position": "same",
+        "Same and adjacent roles": "adjacent",
+        "All positions": "all",
+    }
+    position_scope = scope_labels[
+        st.radio(
+            "Compare against",
+            list(scope_labels),
+            index=1,
+            help="Ignored when position groups are selected above.",
+        )
+    ]
+    leagues = sorted(pool["league_display_name"].dropna().unique().tolist())
     selected_leagues = st.multiselect("Leagues", leagues)
 
-player_options = (
-    df.sort_values("playerName")["playerName"].dropna().astype(str).unique().tolist()
+# Most minutes first. The dropdown's own search ignores accents and matches the club too.
+matches = df.sort_values("Min", ascending=False)
+labels = (
+    matches["displayName"].fillna(matches["playerName"]).astype(str)
+    + " · " + matches.get("current_team", matches["teamName"]).fillna(matches["teamName"]).fillna("no club").astype(str)
+    + " · " + matches["Detailed_Position"].fillna("?").astype(str)
+    + " · " + pd.to_numeric(matches["Min"], errors="coerce").fillna(0).map("{:,.0f} min".format)
+).to_dict()
+target_index = st.selectbox(
+    "Player",
+    matches.index.tolist(),
+    format_func=labels.get,
+    key=f"player_{season}",
+    help="Type to search by name or club, e.g. mbappe or real madrid.",
 )
-default_player = (
-    df.sort_values("Min", ascending=False)["playerName"].dropna().astype(str).iloc[0]
-)
-default_index = player_options.index(default_player) if default_player in player_options else 0
-selected_player = st.selectbox("Player", player_options, index=default_index)
-target_index = resolve_target_index(df, player_name=selected_player)
+selected_player = df.loc[target_index].get("displayName") or df.loc[target_index].get("playerName")
 target = df.loc[target_index]
 
 status_cols = st.columns(5)
-status_cols[0].metric("Players", f"{len(df):,}")
+status_cols[0].metric(f"Players {season}", f"{len(df):,}")
 status_cols[1].metric("Selected age", format_metric(target.get("age")))
 status_cols[2].metric("Minutes", format_metric(target.get("Min"), "{:,.0f}"))
 match_confidence = target.get("match_confidence")
@@ -103,40 +247,92 @@ with left:
     )
 
 with right:
-    profile_table = target[profile_cols].rename(
-        index=lambda value: value.replace("_score", "").replace("_", " ").title()
+    profile_table = pd.DataFrame(
+        {
+            "Area": [value.replace("_score", "").replace("_", " ").title() for value in profile_cols],
+            "Group": [(profile_group(value) or "").title() for value in profile_cols],
+            "Vs all players": [target.get(value) for value in profile_cols],
+            "Vs position": [target.get(role_column(value)) for value in profile_cols],
+        }
     )
-    st.dataframe(profile_table.reset_index().rename(columns={"index": "Profile", target.name: "Score"}))
+    st.dataframe(profile_table, hide_index=True)
 
 max_value_filter = max_market_value if max_market_value > 0 else None
 position_filter = [position_labels[label] for label in selected_position_labels] or None
 league_filter = selected_leagues or None
 
+# Profile scores are percentiles within each season, so a player's standing in one
+# season can be compared with players' standing in another.
+if candidate_season == season:
+    search_df, search_target_id = df, target.get("statslook_row_id")
+else:
+    search_target_id = -1
+    search_df = pd.concat(
+        [pool, df.loc[[target_index]].assign(statslook_row_id=search_target_id)],
+        ignore_index=True,
+    )
+    st.caption(
+        f"Comparing {selected_player}'s {season} profile with {candidate_season} players "
+        f"(the player's own {candidate_season} season is left out)."
+    )
+
 similar = find_similar_players(
-    df,
-    player_name=selected_player,
+    search_df,
+    statslook_row_id=search_target_id,
     top_n=10,
     min_minutes=min_minutes,
     max_age=max_age,
     max_market_value_eur=max_value_filter,
     leagues=league_filter,
     positions=position_filter,
+    position_scope=position_scope,
+    use_league_strength=True,
 )
 st.subheader("Most similar players")
-st.dataframe(format_player_table(similar), **stretch_kwargs(st.dataframe))
+player_table_with_comparison(similar, "similar_table", target, profile_cols)
 
 shortlist = recommend_replacements(
-    df,
-    player_name=selected_player,
+    search_df,
+    statslook_row_id=search_target_id,
     top_n=10,
     min_minutes=min_minutes,
     max_age=max_age,
     max_market_value_eur=max_value_filter,
     leagues=league_filter,
     positions=position_filter,
+    position_scope=position_scope,
 )
 st.subheader("Replacement shortlist")
-st.dataframe(format_player_table(shortlist), **stretch_kwargs(st.dataframe))
+player_table_with_comparison(shortlist, "shortlist_table", target, profile_cols)
+
+st.subheader("Watchlist")
+watchlist = load_watchlist()
+if watchlist.empty:
+    st.caption("No players yet. Click a row in the tables above and press ☆ Add to watchlist.")
+else:
+    st.caption("Edit notes or delete rows (select a row, then press Delete), then save.")
+    edited = st.data_editor(
+        watchlist.drop(columns=["player_key"]),
+        hide_index=True,
+        num_rows="dynamic",
+        disabled=[column for column in watchlist.columns if column not in ("Note", "player_key")],
+        key="watchlist_editor",
+        **stretch_kwargs(st.data_editor),
+    )
+    save_col, download_col = st.columns([1, 1])
+    if save_col.button("Save watchlist changes"):
+        # Rows deleted in the editor are dropped; rows added there are ignored.
+        kept = watchlist.loc[watchlist.index.intersection(edited.index)].copy()
+        kept["Note"] = edited.loc[kept.index, "Note"].fillna("")
+        save_watchlist(kept)
+        st.success("Watchlist saved.")
+        st.rerun()
+    download_col.download_button(
+        "Download watchlist (CSV)",
+        watchlist.drop(columns=["player_key"]).to_csv(index=False).encode("utf-8"),
+        file_name="watchlist.csv",
+        mime="text/csv",
+    )
 
 if df["match_method"].eq("unmatched").all():
     st.info(

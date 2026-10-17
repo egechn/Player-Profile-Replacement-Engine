@@ -1,0 +1,29 @@
+# Where the app / `python -m src.data_sources.statslook_fetch` pulls StatsLook data from.
+# The scout page (below, for reference) reads a public JSON API; the fetcher calls
+# that API directly, 100 players per page, until it has every player.
+page_url: "https://statslook.com/scout/players?pos=cb,rb,lb,rm,lm,am,cm,dm,st,lw,rw,ss&statMode=total"
+api_url: "https://statslook.com/api/players/stats"
+
+# Season to fetch (our label); saved to data/raw/statslook/<season>/.
+# StatsLook offers 2023/2024, 2024/2025, 2025/2026 and 2026/2027.
+season: "2026-27"
+
+# Query parameters sent to the API (season is added from `season` above).
+params:
+  statMode: total
+  sortBy: 118
+  sortDir: desc
+  limit: 100          # the API caps pages at 100
+  minApps: 0
+  # No positionIds filter: it also drops players StatsLook has no detailed
+  # position for (about 750 outfield players a season).
+
+# Outfield players only: the profiles are built for outfield roles.
+exclude_goalkeepers: true
+
+user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+pause_seconds: 0.3
+
+# Extra StatsLook field -> pipeline name renames, on top of config/column_mapping.yaml
+# (statslook_api section) and the automatic case-insensitive match.
+column_map: {}

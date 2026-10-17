@@ -1,68 +1,57 @@
-ball_progressor_score:
-  Successful_Dribbles_per90: 0.30
-  Dribble_Attempts_per90: 0.20
-  Passes_Final_Third_per90: 0.20
-  Touches_per90: 0.15
-  Through_Balls_Won_per90: 0.15
+# CIES-style performance areas, grouped as defence / air / possession / attack.
+# Main scores are percentiles against all outfield players; a position-relative
+# copy of each score is stored as <area>_role_score.
 
-creator_score:
-  Asist_per90: 0.15
-  Key_Passes_per90: 0.25
-  Chances_Created_per90: 0.25
+# Defence
+# *_padj columns are possession-adjusted (src/features/defensive_context.py).
+# challenge_loss_rate = dribbled past / (tackles + dribbled past).
+ground_defence_score:
+  Tackles_Won_per90_padj: 0.20
+  Interception_per90_padj: 0.20
+  Ball_Recovery_per90_padj: 0.15
+  Blocked_Shots_per90_padj: 0.05
+  duel_success_rate: 0.15
+  tackle_success_rate: 0.10
+  challenge_loss_rate_inverse: 0.15
+
+# Air (one area: StatsLook has no duel locations to split defence from attack)
+air_score:
+  Aerials_Won_per90: 0.45
+  aerial_win_rate: 0.35
+  height: 0.20
+
+# Possession
+build_up_score:
+  Passes_per90: 0.20
+  Accurate_Passes_per90: 0.20
+  pass_accuracy: 0.20
+  Long_Balls_Won_per90: 0.20
+  Possession_Lost_per90_inverse: 0.20
+
+orchestration_score:
+  Passes_Final_Third_per90: 0.40
+  Through_Balls_Won_per90: 0.25
+  Touches_per90: 0.20
+  Key_Passes_per90: 0.15
+
+take_on_score:
+  Successful_Dribbles_per90: 0.40
+  Dribble_Attempts_per90: 0.25
+  dribble_success_rate: 0.15
+  Fouls_Drawn_per90: 0.20
+
+chance_creation_score:
+  Key_Passes_per90: 0.20
+  Chances_Created_per90: 0.20
   Big_Chances_Created_per90: 0.20
-  Through_Balls_Won_per90: 0.15
+  Asist_per90: 0.15
+  Accurate_Crosses_per90: 0.15
+  Total_Crosses_per90: 0.10
 
-finisher_score:
+# Attack
+finishing_score:
   Gol_per90: 0.25
   xG_per90: 0.25
   xGoT_per90: 0.20
-  Shots_Total_per90: 0.15
   Shots_on_Target_per90: 0.15
-
-presser_score:
-  Tackles_per90: 0.25
-  Tackles_Won_per90: 0.20
-  Interception_per90: 0.20
-  Ball_Recovery_per90: 0.25
-  Fouls_per90: 0.10
-
-ball_winner_score:
-  Tackles_Won_per90: 0.25
-  Interception_per90: 0.25
-  Ball_Recovery_per90: 0.25
-  Duels_Won_per90: 0.25
-
-aerial_score:
-  Aerials_Won_per90: 0.45
-  Aerials_per90: 0.25
-  aerial_win_rate: 0.20
-  height: 0.10
-
-possession_security_score:
-  pass_accuracy: 0.30
-  Accurate_Passes_per90: 0.20
-  Possession_Lost_per90_inverse: 0.20
-  Turn_Over_per90_inverse: 0.15
-  Dispossed_per90_inverse: 0.15
-
-wide_creator_score:
-  Total_Crosses_per90: 0.20
-  Accurate_Crosses_per90: 0.25
-  Successful_Dribbles_per90: 0.20
-  Key_Passes_per90: 0.20
-  Chances_Created_per90: 0.15
-
-box_threat_score:
-  Gol_per90: 0.20
-  xG_per90: 0.25
-  xGoT_per90: 0.15
   Shots_Total_per90: 0.15
-  Shots_on_Target_per90: 0.15
-  Big_Chances_Created_per90: 0.10
-
-deep_playmaker_score:
-  Passes_per90: 0.20
-  Accurate_Passes_per90: 0.20
-  Passes_Final_Third_per90: 0.25
-  Long_Balls_Won_per90: 0.20
-  Through_Balls_Won_per90: 0.15

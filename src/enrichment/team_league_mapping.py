@@ -24,9 +24,14 @@ def _team_similarity(left: str, right: str) -> float:
     right_tokens = set(right.split())
     if left_tokens and right_tokens:
         if left_tokens.issubset(right_tokens) or right_tokens.issubset(left_tokens):
-            return 100.0
-        overlap = len(left_tokens & right_tokens) / max(min(len(left_tokens), len(right_tokens)), 1)
-        if overlap >= 0.75:
+            # A one-token subset is often a generic club word ("athletic",
+            # "city", "united") and can create bad cross-country matches.
+            shorter = left_tokens if len(left_tokens) <= len(right_tokens) else right_tokens
+            if len(shorter) >= 2:
+                return 100.0
+        shorter_size = min(len(left_tokens), len(right_tokens))
+        overlap = len(left_tokens & right_tokens) / max(shorter_size, 1)
+        if shorter_size >= 2 and overlap >= 0.75:
             return 90.0
 
     try:

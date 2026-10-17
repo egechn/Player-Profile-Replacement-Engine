@@ -1,0 +1,11 @@
+# Small-sample correction (src/features/reliability.py).
+# Before ranking, each player's per-90 numbers and rates are mixed with the
+# typical value for their position, as if they had played this many extra
+# minutes at position-average level. 0 turns the correction off.
+shrinkage_minutes: 450
+
+# Players with at least this many minutes define a position's typical value.
+prior_min_minutes: 900
+
+# Sample indicator in the tables: minutes needed for ●●● and ●● (below: ●).
+sample_bands: [900, 450]

@@ -1,0 +1,975 @@
+# Team-to-league mapping for Statslook teams missing from team_league_mapping.yaml.
+# Used only when a team has no league there. Review and move entries into the
+# main mapping once checked.
+#
+# source: manual        = 2025-26 league membership added by hand; please check
+# source: transfermarkt = the team's own Transfermarkt club (players whose current
+#   club matches the Statslook team, club data from the 2025 season) plays in a
+#   league that has a strength coefficient
+teams:
+  "Derby County":
+    league_display_name: EFL Championship
+    source: manual
+  "Oxford United":
+    league_display_name: EFL Championship
+    source: manual
+  "Portsmouth":
+    league_display_name: EFL Championship
+    source: manual
+  "Sheffield United":
+    league_display_name: EFL Championship
+    source: manual
+  "Wrexham":
+    league_display_name: EFL Championship
+    source: manual
+  "Reading":
+    league_display_name: EFL League One
+    source: manual
+  "Luton Town":
+    league_display_name: EFL League One
+    source: manual
+  "Bolton Wanderers":
+    league_display_name: EFL League One
+    source: manual
+  "Wigan Athletic":
+    league_display_name: EFL League One
+    source: manual
+  "Bradford City":
+    league_display_name: EFL League One
+    source: manual
+  "Burton Albion":
+    league_display_name: EFL League One
+    source: manual
+  "Wycombe Wanderers":
+    league_display_name: EFL League One
+    source: manual
+  "Doncaster Rovers":
+    league_display_name: EFL League One
+    source: manual
+  "Blackpool":
+    league_display_name: EFL League One
+    source: manual
+  "Milton Keynes Dons":
+    league_display_name: EFL League Two
+    source: manual
+  "Ferencvárosi":
+    league_display_name: Hungarian NB I
+    source: manual
+  "Paksi SE":
+    league_display_name: Hungarian NB I
+    source: manual
+  "Győri ETO":
+    league_display_name: Hungarian NB I
+    source: manual
+  "Puskás":
+    league_display_name: Hungarian NB I
+    source: manual
+  "Debrecen":
+    league_display_name: Hungarian NB I
+    source: manual
+  "Újpest":
+    league_display_name: Hungarian NB I
+    source: manual
+  "MTK":
+    league_display_name: Hungarian NB I
+    source: manual
+  "Zalaegerszegi TE":
+    league_display_name: Hungarian NB I
+    source: manual
+  "Diósgyőr":
+    league_display_name: Hungarian NB I
+    source: manual
+  "MOL Fehérvár":
+    league_display_name: Hungarian NB I
+    source: manual
+  "Maccabi Tel Aviv":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Maccabi Haifa":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Hapoel Be'er Sheva":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Beitar Jerusalem":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Hapoel Tel Aviv":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Hapoel Haifa":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Bnei Sakhnin":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Ashdod":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Ironi Kiryat Shmona":
+    league_display_name: Israeli Premier League
+    source: manual
+  "Pafos FC":
+    league_display_name: Cypriot First Division
+    source: manual
+  "AEK Larnaca":
+    league_display_name: Cypriot First Division
+    source: manual
+  "Omonia Nicosia":
+    league_display_name: Cypriot First Division
+    source: manual
+  "Aris Limassol":
+    league_display_name: Cypriot First Division
+    source: manual
+  "APOEL":
+    league_display_name: Cypriot First Division
+    source: manual
+  "Anorthosis":
+    league_display_name: Cypriot First Division
+    source: manual
+  "Apollon":
+    league_display_name: Cypriot First Division
+    source: manual
+  "Ethnikos Achna":
+    league_display_name: Cypriot First Division
+    source: manual
+  "Slovan Bratislava":
+    league_display_name: Slovak First League
+    source: manual
+  "Spartak Trnava":
+    league_display_name: Slovak First League
+    source: manual
+  "FK Košice":
+    league_display_name: Slovak First League
+    source: manual
+  "Žilina":
+    league_display_name: Slovak First League
+    source: manual
+  "Trenčín":
+    league_display_name: Slovak First League
+    source: manual
+  "Dunajská Streda":
+    league_display_name: Slovak First League
+    source: manual
+  "Ružomberok":
+    league_display_name: Slovak First League
+    source: manual
+  "LASK Linz":
+    league_display_name: Admiral Bundesliga
+    source: manual
+  "Grazer AK":
+    league_display_name: Admiral Bundesliga
+    source: manual
+  "Cracovia Kraków":
+    league_display_name: Ekstraklasa
+    source: manual
+  "Estudiantes de Río Cuarto":
+    league_display_name: Argentine Primera Division
+    source: manual
+  "Gimnasia La Plata":
+    league_display_name: Argentine Primera Division
+    source: manual
+  "Vålerenga":
+    league_display_name: Eliteserien
+    source: manual
+  "Hearts":
+    league_display_name: Scottish Premiership
+    source: manual
+  "St. Mirren":
+    league_display_name: Scottish Premiership
+    source: manual
+  "Slaven Koprivnica":
+    league_display_name: Croatian HNL
+    source: manual
+  "Shakhtar Donetsk":
+    league_display_name: Ukrainian Premier League
+    source: manual
+  "Dynamo Kyiv":
+    league_display_name: Ukrainian Premier League
+    source: manual
+  "Polissya Zhytomyr":
+    league_display_name: Ukrainian Premier League
+    source: manual
+  "Oleksandria":
+    league_display_name: Ukrainian Premier League
+    source: manual
+  "Kolos Kovalivka":
+    league_display_name: Ukrainian Premier League
+    source: manual
+  "Karpaty":
+    league_display_name: Ukrainian Premier League
+    source: manual
+  "Kryvbas Kryvyi Rih":
+    league_display_name: Ukrainian Premier League
+    source: manual
+  "Zorya Luhansk":
+    league_display_name: Ukrainian Premier League
+    source: manual
+  "Crvena Zvezda":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "Partizan":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "Novi Pazar":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "Radnički Kragujevac":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "Vojvodina":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "Čukarički":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "OFK Beograd":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "Bačka Topola":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "Spartak Subotica":
+    league_display_name: Serbian Super Liga
+    source: manual
+  "Qarabağ":
+    league_display_name: Azerbaijan Premier League
+    source: manual
+  "Zira":
+    league_display_name: Azerbaijan Premier League
+    source: manual
+  "Araz":
+    league_display_name: Azerbaijan Premier League
+    source: manual
+  "Sabah":
+    league_display_name: Azerbaijan Premier League
+    source: manual
+  "Neftçi":
+    league_display_name: Azerbaijan Premier League
+    source: manual
+  "Sumqayıt":
+    league_display_name: Azerbaijan Premier League
+    source: manual
+  "Şamaxı FK":
+    league_display_name: Azerbaijan Premier League
+    source: manual
+  "Qabala":
+    league_display_name: Azerbaijan Premier League
+    source: manual
+  "Celje":
+    league_display_name: Slovenian PrvaLiga
+    source: manual
+  "Olimpija":
+    league_display_name: Slovenian PrvaLiga
+    source: manual
+  "Maribor":
+    league_display_name: Slovenian PrvaLiga
+    source: manual
+  "Koper":
+    league_display_name: Slovenian PrvaLiga
+    source: manual
+  "Mura":
+    league_display_name: Slovenian PrvaLiga
+    source: manual
+  "Bravo":
+    league_display_name: Slovenian PrvaLiga
+    source: manual
+  "Partizani Tirana":
+    league_display_name: Albanian Kategoria Superiore
+    source: manual
+  "Egnatia Rrogozhinë":
+    league_display_name: Albanian Kategoria Superiore
+    source: manual
+  "Vllaznia Shkodër":
+    league_display_name: Albanian Kategoria Superiore
+    source: manual
+  "Dinamo City":
+    league_display_name: Albanian Kategoria Superiore
+    source: manual
+  "Tirana":
+    league_display_name: Albanian Kategoria Superiore
+    source: manual
+  "Teuta Durrës":
+    league_display_name: Albanian Kategoria Superiore
+    source: manual
+  "Flamurtari":
+    league_display_name: Albanian Kategoria Superiore
+    source: manual
+  "Drita":
+    league_display_name: Kosovan Superliga
+    source: manual
+  "KF Ballkani":
+    league_display_name: Kosovan Superliga
+    source: manual
+  "Prishtina":
+    league_display_name: Kosovan Superliga
+    source: manual
+  "Malisheva":
+    league_display_name: Kosovan Superliga
+    source: manual
+  "Gjilani":
+    league_display_name: Kosovan Superliga
+    source: manual
+  "KF Llapi":
+    league_display_name: Kosovan Superliga
+    source: manual
+  "Zrinjski":
+    league_display_name: Bosnian Premijer Liga
+    source: manual
+  "Zeljeznicar":
+    league_display_name: Bosnian Premijer Liga
+    source: manual
+  "Borac Banja Luka":
+    league_display_name: Bosnian Premijer Liga
+    source: manual
+  "Sarajevo":
+    league_display_name: Bosnian Premijer Liga
+    source: manual
+  "Radnik Bijeljina":
+    league_display_name: Bosnian Premijer Liga
+    source: manual
+  "Sloboda Tuzla":
+    league_display_name: Bosnian Premijer Liga
+    source: manual
+  "KuPS":
+    league_display_name: Veikkausliiga
+    source: manual
+  "Ilves":
+    league_display_name: Veikkausliiga
+    source: manual
+  "HJK":
+    league_display_name: Veikkausliiga
+    source: manual
+  "SJK":
+    league_display_name: Veikkausliiga
+    source: manual
+  "VPS":
+    league_display_name: Veikkausliiga
+    source: manual
+  "Inter Turku":
+    league_display_name: Veikkausliiga
+    source: manual
+  "Kairat":
+    league_display_name: Kazakhstan Premier League
+    source: manual
+  "Ordabasy":
+    league_display_name: Kazakhstan Premier League
+    source: manual
+  "Tobol":
+    league_display_name: Kazakhstan Premier League
+    source: manual
+  "Astana":
+    league_display_name: Kazakhstan Premier League
+    source: manual
+  "Aktobe":
+    league_display_name: Kazakhstan Premier League
+    source: manual
+  "Kaisar":
+    league_display_name: Kazakhstan Premier League
+    source: manual
+  "Atyrau":
+    league_display_name: Kazakhstan Premier League
+    source: manual
+  "Kyzyl-Zhar":
+    league_display_name: Kazakhstan Premier League
+    source: manual
+  "Neman Grodno":
+    league_display_name: Belarusian Premier League
+    source: manual
+  "Dinamo Brest":
+    league_display_name: Belarusian Premier League
+    source: manual
+  "Dinamo Minsk":
+    league_display_name: Belarusian Premier League
+    source: manual
+  "Torpedo BelAZ":
+    league_display_name: Belarusian Premier League
+    source: manual
+  "Isloch":
+    league_display_name: Belarusian Premier League
+    source: manual
+  "Gomel":
+    league_display_name: Belarusian Premier League
+    source: manual
+  "BATE":
+    league_display_name: Belarusian Premier League
+    source: manual
+  "Slavia":
+    league_display_name: Belarusian Premier League
+    source: manual
+  "Shamrock Rovers":
+    league_display_name: League of Ireland Premier Division
+    source: manual
+  "Shelbourne":
+    league_display_name: League of Ireland Premier Division
+    source: manual
+  "St Patrick's":
+    league_display_name: League of Ireland Premier Division
+    source: manual
+  "Derry City":
+    league_display_name: League of Ireland Premier Division
+    source: manual
+  "Drogheda United":
+    league_display_name: League of Ireland Premier Division
+    source: manual
+  "Bohemians":
+    league_display_name: League of Ireland Premier Division
+    source: manual
+  "Sligo Rovers":
+    league_display_name: League of Ireland Premier Division
+    source: manual
+  "Víkingur Reykjavík":
+    league_display_name: Besta deild
+    source: manual
+  "Valur":
+    league_display_name: Besta deild
+    source: manual
+  "Breidablik":
+    league_display_name: Besta deild
+    source: manual
+  "KA Akureyri":
+    league_display_name: Besta deild
+    source: manual
+  "Stjarnan":
+    league_display_name: Besta deild
+    source: manual
+  "Fram":
+    league_display_name: Besta deild
+    source: manual
+  "ÍA":
+    league_display_name: Besta deild
+    source: manual
+  "KR Reykjavík":
+    league_display_name: Besta deild
+    source: manual
+  "Noah":
+    league_display_name: Armenian Premier League
+    source: manual
+  "Pyunik":
+    league_display_name: Armenian Premier League
+    source: manual
+  "Ararat-Armenia":
+    league_display_name: Armenian Premier League
+    source: manual
+  "Urartu":
+    league_display_name: Armenian Premier League
+    source: manual
+  "Alashkert":
+    league_display_name: Armenian Premier League
+    source: manual
+  "Skendija 79":
+    league_display_name: Macedonian First League
+    source: manual
+  "Vardar":
+    league_display_name: Macedonian First League
+    source: manual
+  "Sileks":
+    league_display_name: Macedonian First League
+    source: manual
+  "Rabotnicki":
+    league_display_name: Macedonian First League
+    source: manual
+  "Struga":
+    league_display_name: Macedonian First League
+    source: manual
+  "Akademija Pandev":
+    league_display_name: Macedonian First League
+    source: manual
+  "Torpedo Kutaisi":
+    league_display_name: Georgian Erovnuli Liga
+    source: manual
+  "Dila":
+    league_display_name: Georgian Erovnuli Liga
+    source: manual
+  "Dinamo Tbilisi":
+    league_display_name: Georgian Erovnuli Liga
+    source: manual
+  "FC Iberia 1999":
+    league_display_name: Georgian Erovnuli Liga
+    source: manual
+  "Spaeri":
+    league_display_name: Georgian Erovnuli Liga
+    source: manual
+  "Kauno Žalgiris":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "Žalgiris":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "Hegelmann Litauen":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "Sūduva":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "Panevėžys":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "Banga":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "TransINVEST Vilnius":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "FA Šiauliai":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "FK Riteriai":
+    league_display_name: Lithuanian A Lyga
+    source: manual
+  "Vaduz":
+    league_display_name: Swiss Challenge League
+    source: manual
+  "Yverdon Sport":
+    league_display_name: Swiss Challenge League
+    source: manual
+  "Aarau":
+    league_display_name: Swiss Challenge League
+    source: manual
+  "Wil":
+    league_display_name: Swiss Challenge League
+    source: manual
+  "Stade Lausanne-Ouchy":
+    league_display_name: Swiss Challenge League
+    source: manual
+  "Neuchâtel Xamax":
+    league_display_name: Swiss Challenge League
+    source: manual
+  "Alemannia Aachen":
+    league_display_name: 3. Liga
+    source: manual
+  "Hansa Rostock":
+    league_display_name: 3. Liga
+    source: manual
+  "Erzgebirge Aue":
+    league_display_name: 3. Liga
+    source: manual
+  "MSV Duisburg":
+    league_display_name: 3. Liga
+    source: manual
+  "Rot-Weiss Essen":
+    league_display_name: 3. Liga
+    source: manual
+  "Wehen Wiesbaden":
+    league_display_name: 3. Liga
+    source: manual
+  "Ingolstadt":
+    league_display_name: 3. Liga
+    source: manual
+  "Energie Cottbus":
+    league_display_name: 3. Liga
+    source: manual
+  "Osnabrück":
+    league_display_name: 3. Liga
+    source: manual
+  "Leixões":
+    league_display_name: Liga Portugal 2
+    source: manual
+  "União de Leiria":
+    league_display_name: Liga Portugal 2
+    source: manual
+  "Chaves":
+    league_display_name: Liga Portugal 2
+    source: manual
+  "Feirense":
+    league_display_name: Liga Portugal 2
+    source: manual
+  "Penafiel":
+    league_display_name: Liga Portugal 2
+    source: manual
+  "Paços de Ferreira":
+    league_display_name: Liga Portugal 2
+    source: manual
+  "Vizela":
+    league_display_name: Liga Portugal 2
+    source: manual
+  "Farense":
+    league_display_name: Liga Portugal 2
+    source: manual
+  "Lugo":
+    league_display_name: Primera Federacion
+    source: manual
+  "Real Murcia":
+    league_display_name: Primera Federacion
+    source: manual
+  "UD Ibiza":
+    league_display_name: Primera Federacion
+    source: manual
+  "FC Cartagena":
+    league_display_name: Primera Federacion
+    source: manual
+  "Barcelona II":
+    league_display_name: Primera Federacion
+    source: manual
+  "Villarreal II":
+    league_display_name: Primera Federacion
+    source: manual
+  "Tenerife":
+    league_display_name: Primera Federacion
+    source: manual
+  "Racing Ferrol":
+    league_display_name: Primera Federacion
+    source: manual
+  "Ponferradina":
+    league_display_name: Primera Federacion
+    source: manual
+  "Hércules":
+    league_display_name: Primera Federacion
+    source: manual
+  "Eldense":
+    league_display_name: Primera Federacion
+    source: manual
+  "Gimnàstic Tarragona":
+    league_display_name: Primera Federacion
+    source: manual
+  "RWDM Brussels":
+    league_display_name: Challenger Pro League
+    source: manual
+  "KAS Eupen":
+    league_display_name: Challenger Pro League
+    source: manual
+  "Beerschot":
+    league_display_name: Challenger Pro League
+    source: manual
+  "K. Beerschot V.A.":
+    league_display_name: Challenger Pro League
+    source: manual
+  "SK Beveren":
+    league_display_name: Challenger Pro League
+    source: manual
+  "Lyn":
+    league_display_name: Norwegian 1. divisjon
+    source: manual
+  "Sogndal":
+    league_display_name: Norwegian 1. divisjon
+    source: manual
+  "Stabæk":
+    league_display_name: Norwegian 1. divisjon
+    source: manual
+  "Hødd":
+    league_display_name: Norwegian 1. divisjon
+    source: manual
+  "Orléans":
+    league_display_name: Championnat National
+    source: manual
+  "Quevilly Rouen":
+    league_display_name: Championnat National
+    source: manual
+  "Sochaux":
+    league_display_name: Championnat National
+    source: manual
+  "Valenciennes":
+    league_display_name: Championnat National
+    source: manual
+  "Châteauroux":
+    league_display_name: Championnat National
+    source: manual
+  "Bourg-en-Bresse":
+    league_display_name: Championnat National
+    source: manual
+  "Aalesund":
+    league_display_name: Eliteserien
+    source: transfermarkt
+    transfermarkt_club: "Aalesunds Fotballklubb"
+    transfermarkt_competition_id: NO1
+    matched_players: 10
+  "Aberdeen":
+    league_display_name: Scottish Premiership
+    source: transfermarkt
+    transfermarkt_club: "Aberdeen Football Club"
+    transfermarkt_competition_id: SC1
+    matched_players: 15
+  "Aldosivi":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Aldosivi"
+    transfermarkt_competition_id: ARG1
+    matched_players: 22
+  "Argentinos Juniors":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Asociación Atlética Argentinos Juniors"
+    transfermarkt_competition_id: ARG1
+    matched_players: 21
+  "Arka Gdynia":
+    league_display_name: Ekstraklasa
+    source: transfermarkt
+    transfermarkt_club: "Morski Związkowy Klub Sportowy Arka Gdynia Spółka Akcyjna"
+    transfermarkt_competition_id: PL1
+    matched_players: 21
+  "Atlético Tucumán":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Tucumán"
+    transfermarkt_competition_id: ARG1
+    matched_players: 21
+  "Banfield":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Banfield"
+    transfermarkt_competition_id: ARG1
+    matched_players: 22
+  "Barracas Central":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Barracas Central"
+    transfermarkt_competition_id: ARG1
+    matched_players: 17
+  "Belgrano":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Belgrano"
+    transfermarkt_competition_id: ARG1
+    matched_players: 23
+  "Celtic":
+    league_display_name: Scottish Premiership
+    source: transfermarkt
+    transfermarkt_club: "The Celtic Football Club"
+    transfermarkt_competition_id: SC1
+    matched_players: 25
+  "Degerfors":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "Degerfors IF"
+    transfermarkt_competition_id: SE1
+    matched_players: 11
+  "Dinamo Zagreb":
+    league_display_name: Croatian HNL
+    source: transfermarkt
+    transfermarkt_club: "GNK Dinamo Zagreb"
+    transfermarkt_competition_id: KR1
+    matched_players: 17
+  "Djurgården":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "Djurgårdens Idrottsförening"
+    transfermarkt_competition_id: SE1
+    matched_players: 16
+  "Dukla Praha":
+    league_display_name: Czech First League
+    source: transfermarkt
+    transfermarkt_club: "FK Dukla Praha a.s."
+    transfermarkt_competition_id: TS1
+    matched_players: 26
+  "Dundee United":
+    league_display_name: Scottish Premiership
+    source: transfermarkt
+    transfermarkt_club: "Dundee United Football Club"
+    transfermarkt_competition_id: SC1
+    matched_players: 10
+  "Elfsborg":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "Idrottsföreningen Elfsborg"
+    transfermarkt_competition_id: SE1
+    matched_players: 19
+  "Hajduk Split":
+    league_display_name: Croatian HNL
+    source: transfermarkt
+    transfermarkt_club: "HNK Hajduk Split"
+    transfermarkt_competition_id: KR1
+    matched_players: 13
+  "Halmstad":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "Halmstads BK"
+    transfermarkt_competition_id: SE1
+    matched_players: 15
+  "Hammarby":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "Hammarby IF"
+    transfermarkt_competition_id: SE1
+    matched_players: 17
+  "Hibernian":
+    league_display_name: Scottish Premiership
+    source: transfermarkt
+    transfermarkt_club: "Hibernian Football Club"
+    transfermarkt_competition_id: SC1
+    matched_players: 15
+  "Huracán":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Huracán"
+    transfermarkt_competition_id: ARG1
+    matched_players: 22
+  "Häcken":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "BK Häcken"
+    transfermarkt_competition_id: SE1
+    matched_players: 20
+  "Independiente Rivadavia":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Sportivo Independiente Rivadavia"
+    transfermarkt_competition_id: ARG1
+    matched_players: 23
+  "KFUM":
+    league_display_name: Eliteserien
+    source: transfermarkt
+    transfermarkt_club: "KFUM-Kameratene Oslo"
+    transfermarkt_competition_id: NO1
+    matched_players: 17
+  "Kalmar":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "Kalmar Fotbollförening"
+    transfermarkt_competition_id: SE1
+    matched_players: 12
+  "Katowice":
+    league_display_name: Ekstraklasa
+    source: transfermarkt
+    transfermarkt_club: "GKS GieKSa Katowice Spółka Akcyjna"
+    transfermarkt_competition_id: PL1
+    matched_players: 24
+  "Kilmarnock":
+    league_display_name: Scottish Premiership
+    source: transfermarkt
+    transfermarkt_club: "Kilmarnock Football Club"
+    transfermarkt_competition_id: SC1
+    matched_players: 4
+  "Lechia Gdańsk":
+    league_display_name: Ekstraklasa
+    source: transfermarkt
+    transfermarkt_club: "Klub Sportowy Lechia Gdańsk"
+    transfermarkt_competition_id: PL1
+    matched_players: 15
+  "Livingston":
+    league_display_name: Scottish Premiership
+    source: transfermarkt
+    transfermarkt_club: "Livingston Football Club"
+    transfermarkt_competition_id: SC1
+    matched_players: 3
+  "Lokomotiva Zagreb":
+    league_display_name: Croatian HNL
+    source: transfermarkt
+    transfermarkt_club: "NK Lokomotiva Zagreb"
+    transfermarkt_competition_id: KR1
+    matched_players: 5
+  "Mjällby":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "Mjällby Almänna Idrottsförening"
+    transfermarkt_competition_id: SE1
+    matched_players: 17
+  "Motherwell":
+    league_display_name: Scottish Premiership
+    source: transfermarkt
+    transfermarkt_club: "Motherwell Football Club"
+    transfermarkt_competition_id: SC1
+    matched_players: 1
+  "Motor Lublin":
+    league_display_name: Ekstraklasa
+    source: transfermarkt
+    transfermarkt_club: "Motor Lublin Spółka Akcyjna"
+    transfermarkt_competition_id: PL1
+    matched_players: 22
+  "Napredak":
+    league_display_name: Serbian Super Liga
+    source: transfermarkt
+    transfermarkt_club: "Fudbalski klub Napredak Kruševac"
+    transfermarkt_competition_id: SER1
+    matched_players: 2
+  "Nieciecza":
+    league_display_name: Ekstraklasa
+    source: transfermarkt
+    transfermarkt_club: "Termalica Bruk-Bet Nieciecza Klub Sportowy"
+    transfermarkt_competition_id: PL1
+    matched_players: 18
+  "Osijek":
+    league_display_name: Croatian HNL
+    source: transfermarkt
+    transfermarkt_club: "NK Osijek s.d.d."
+    transfermarkt_competition_id: KR1
+    matched_players: 6
+  "Racing Club":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Racing Club Asociación Civil de Avellaneda"
+    transfermarkt_competition_id: ARG1
+    matched_players: 22
+  "Rangers":
+    league_display_name: Scottish Premiership
+    source: transfermarkt
+    transfermarkt_club: "Rangers Football Club"
+    transfermarkt_competition_id: SC1
+    matched_players: 14
+  "Rheindorf Altach":
+    league_display_name: Admiral Bundesliga
+    source: transfermarkt
+    transfermarkt_club: "Sportclub Rheindorf Altach"
+    transfermarkt_competition_id: A1
+    matched_players: 19
+  "Ried":
+    league_display_name: Admiral Bundesliga
+    source: transfermarkt
+    transfermarkt_club: "Sportvereinigung Ried 1912"
+    transfermarkt_competition_id: A1
+    matched_players: 16
+  "Rijeka":
+    league_display_name: Croatian HNL
+    source: transfermarkt
+    transfermarkt_club: "Hrvatski Nogometni Klub Rijeka"
+    transfermarkt_competition_id: KR1
+    matched_players: 15
+  "River Plate":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético River Plate"
+    transfermarkt_competition_id: ARG1
+    matched_players: 27
+  "Rosario Central":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Rosario Central"
+    transfermarkt_competition_id: ARG1
+    matched_players: 20
+  "Salzburg":
+    league_display_name: Admiral Bundesliga
+    source: transfermarkt
+    transfermarkt_club: "Fußballclub Red Bull Salzburg"
+    transfermarkt_competition_id: A1
+    matched_players: 24
+  "Sarmiento":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Sarmiento"
+    transfermarkt_competition_id: ARG1
+    matched_players: 17
+  "Sirius":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "IK Sirius"
+    transfermarkt_competition_id: SE1
+    matched_players: 12
+  "Start":
+    league_display_name: Eliteserien
+    source: transfermarkt
+    transfermarkt_club: "Idrettsklubben Start"
+    transfermarkt_competition_id: NO1
+    matched_players: 13
+  "Tigre":
+    league_display_name: Argentine Primera Division
+    source: transfermarkt
+    transfermarkt_club: "Club Atlético Tigre"
+    transfermarkt_competition_id: ARG1
+    matched_players: 17
+  "Varaždin":
+    league_display_name: Croatian HNL
+    source: transfermarkt
+    transfermarkt_club: "NK Varazdin"
+    transfermarkt_competition_id: KR1
+    matched_players: 8
+  "Wisła Płock":
+    league_display_name: Ekstraklasa
+    source: transfermarkt
+    transfermarkt_club: "Wisła Płock Spółka Akcyjna"
+    transfermarkt_competition_id: PL1
+    matched_players: 20
+  "Örgryte":
+    league_display_name: Allsvenskan
+    source: transfermarkt
+    transfermarkt_club: "Örgryte IS"
+    transfermarkt_competition_id: SE1
+    matched_players: 13

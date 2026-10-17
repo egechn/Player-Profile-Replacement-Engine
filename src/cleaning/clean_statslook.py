@@ -31,7 +31,8 @@ STATSLOOK_NUMERIC_COLUMNS = sorted(
 
 
 def _safe_rate(numerator: pd.Series, denominator: pd.Series) -> pd.Series:
-    denominator = denominator.replace(0, np.nan)
+    # The source sometimes reports more successes than attempts; attempts can't be fewer.
+    denominator = denominator.where(denominator >= numerator, numerator).replace(0, np.nan)
     rate = numerator / denominator * 100
     return rate.replace([np.inf, -np.inf], np.nan).fillna(0)
 
@@ -56,6 +57,8 @@ def clean_statslook(
         axis=1,
     )
     result["statslook_row_id"] = result.index.astype(int)
+    # The 2025-26 export's Aerials does not add up to won + lost.
+    result["Aerials"] = result["Aerials_Won"] + result["Aerial_Lost"]
 
     result = add_age(result, reference_date=reference_date)
     result = add_per90(result)

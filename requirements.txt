@@ -17,6 +17,5 @@ PyYAML>=6.0
 requests~=2.31.0
 cloudscraper>=1.2.71
 asyncio
-playwright
 beautifulsoup4
 undetected-chromedriver==3.5.5
