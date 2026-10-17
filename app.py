@@ -23,13 +23,16 @@ from src.io_utils import read_table
 from src.seasons import (
     available_seasons,
     default_min_minutes,
+    base_season,
     default_season,
+    is_league_only,
     master_path_for,
     processed_dir_for,
     statslook_source_for,
 )
 from src.visualization.radar import build_comparison_radar, build_profile_radar
 from src.visualization.tables import focus_areas, format_player_table
+from src.watchlist import add_to_watchlist, load_watchlist, save_watchlist
 
 
 def format_metric(value, number_format: str = "{:.1f}", missing: str = "n/a") -> str:
@@ -73,8 +76,9 @@ def player_table_with_comparison(
     """Player table; clicking a row shows that player's profile next to the target's."""
     if focus_areas(players):
         st.caption(f"Search focused on the selected player's strengths: {focus_areas(players)}.")
+    table = format_player_table(players)
     event = st.dataframe(
-        format_player_table(players),
+        table,
         hide_index=True,
         # A new target resets the selection.
         key=f"{key}_{target.get('season')}_{target.get('statslook_row_id')}",
@@ -82,13 +86,27 @@ def player_table_with_comparison(
         selection_mode="single-row",
         **stretch_kwargs(st.dataframe),
     )
+    target_name = target.get("displayName") or target.get("playerName")
+    st.download_button(
+        "Download table (CSV)",
+        table.to_csv(index=False).encode("utf-8"),
+        file_name=f"{key.replace('_table', '')}_{target_name}_{target.get('season')}.csv".replace(" ", "_"),
+        mime="text/csv",
+        key=f"download_{key}",
+    )
     rows = event.selection.rows if event else []
     if not rows or rows[0] >= len(players):
         st.caption("Click a row to compare that player's profile with the selected player.")
         return
     candidate = players.iloc[rows[0]]
-    target_label = f"{target.get('displayName') or target.get('playerName')} ({target.get('season')})"
-    candidate_label = f"{candidate.get('displayName') or candidate.get('playerName')} ({candidate.get('season')})"
+    candidate_name = candidate.get("displayName") or candidate.get("playerName")
+    if st.button(f"☆ Add {candidate_name} to watchlist", key=f"watch_{key}"):
+        if add_to_watchlist(candidate, table.iloc[rows[0]], similar_to=f"{target_name} ({target.get('season')})"):
+            st.success(f"{candidate_name} added to the watchlist.")
+        else:
+            st.info(f"{candidate_name} is already on the watchlist.")
+    target_label = f"{target_name} ({target.get('season')})"
+    candidate_label = f"{candidate_name} ({candidate.get('season')})"
     labelled_target, labelled_candidate = target.copy(), candidate.copy()
     labelled_target["playerName"], labelled_candidate["playerName"] = target_label, candidate_label
     chart_left, chart_right = st.columns([1, 1])
@@ -114,8 +132,11 @@ with st.sidebar:
         st.error("No StatsLook data found under data/raw/statslook/.")
         st.stop()
     # Last two seasons together: minutes-weighted profile, steadier early in a season.
-    if len(seasons) >= 2:
-        seasons = [combined_label(seasons[-2:])] + seasons
+    full_seasons = [s for s in seasons if not is_league_only(s)]
+    # Newest first, each season followed by its league-only variant, the combination last.
+    seasons = sorted(seasons, key=lambda s: (base_season(s), not is_league_only(s)))
+    if len(full_seasons) >= 2:
+        seasons = [combined_label(full_seasons[-2:])] + seasons
     season = st.selectbox(
         "Season",
         seasons[::-1],
@@ -186,13 +207,6 @@ with st.sidebar:
     leagues = sorted(pool["league_display_name"].dropna().unique().tolist())
     selected_leagues = st.multiselect("Leagues", leagues)
 
-def player_label(row: pd.Series) -> str:
-    name = row.get("displayName") or row.get("playerName")
-    club = row.get("current_team") or row.get("teamName") or "no club"
-    minutes = pd.to_numeric(pd.Series([row.get("Min")]), errors="coerce").fillna(0).iloc[0]
-    return f"{name} · {club} · {row.get('Detailed_Position') or '?'} · {minutes:,.0f} min"
-
-
 def search_text(series: pd.Series) -> pd.Series:
     return series.map(normalize_text)
 
@@ -219,10 +233,16 @@ if search.strip():
         st.warning(f"No player matches '{search}'. Showing all players.")
         matches = by_minutes
 searched = search.strip() and len(matches) < len(by_minutes)
+labels = (
+    matches["displayName"].fillna(matches["playerName"]).astype(str)
+    + " · " + matches.get("current_team", matches["teamName"]).fillna(matches["teamName"]).fillna("no club").astype(str)
+    + " · " + matches["Detailed_Position"].fillna("?").astype(str)
+    + " · " + pd.to_numeric(matches["Min"], errors="coerce").fillna(0).map("{:,.0f} min".format)
+).to_dict()
 target_index = st.selectbox(
     f"Player ({len(matches):,} found)" if searched else "Player",
     matches.index.tolist(),
-    format_func=lambda index: player_label(df.loc[index]),
+    format_func=labels.get,
     key=f"player_{season}",
 )
 selected_player = df.loc[target_index].get("displayName") or df.loc[target_index].get("playerName")
@@ -308,6 +328,35 @@ shortlist = recommend_replacements(
 )
 st.subheader("Replacement shortlist")
 player_table_with_comparison(shortlist, "shortlist_table", target, profile_cols)
+
+st.subheader("Watchlist")
+watchlist = load_watchlist()
+if watchlist.empty:
+    st.caption("No players yet. Click a row in the tables above and press ☆ Add to watchlist.")
+else:
+    st.caption("Edit notes or delete rows (select a row, then press Delete), then save.")
+    edited = st.data_editor(
+        watchlist.drop(columns=["player_key"]),
+        hide_index=True,
+        num_rows="dynamic",
+        disabled=[column for column in watchlist.columns if column not in ("Note", "player_key")],
+        key="watchlist_editor",
+        **stretch_kwargs(st.data_editor),
+    )
+    save_col, download_col = st.columns([1, 1])
+    if save_col.button("Save watchlist changes"):
+        # Rows deleted in the editor are dropped; rows added there are ignored.
+        kept = watchlist.loc[watchlist.index.intersection(edited.index)].copy()
+        kept["Note"] = edited.loc[kept.index, "Note"].fillna("")
+        save_watchlist(kept)
+        st.success("Watchlist saved.")
+        st.rerun()
+    download_col.download_button(
+        "Download watchlist (CSV)",
+        watchlist.drop(columns=["player_key"]).to_csv(index=False).encode("utf-8"),
+        file_name="watchlist.csv",
+        mime="text/csv",
+    )
 
 if df["match_method"].eq("unmatched").all():
     st.info(

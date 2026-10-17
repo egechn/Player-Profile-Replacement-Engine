@@ -34,14 +34,17 @@ REQUIRED_PROFILE_MIN_WEIGHT = 0.6
 # "adjacent". Scores are percentiles against all players, so without this an
 # attacking full back and a passing midfielder can look alike.
 ADJACENT_POSITION_GROUPS = {
-    "centre_back": ["centre_back", "defensive_midfield"],
-    "full_back": ["full_back"],
-    "defensive_midfield": ["defensive_midfield", "central_midfield", "centre_back"],
-    "central_midfield": ["central_midfield", "defensive_midfield", "attacking_midfield"],
-    "attacking_midfield": ["attacking_midfield", "central_midfield", "winger"],
+    "centre_back": ["centre_back", "defensive_midfield", "defender"],
+    "full_back": ["full_back", "defender"],
+    "defensive_midfield": ["defensive_midfield", "central_midfield", "centre_back", "midfielder"],
+    "central_midfield": ["central_midfield", "defensive_midfield", "attacking_midfield", "midfielder"],
+    "attacking_midfield": ["attacking_midfield", "central_midfield", "winger", "midfielder"],
     "winger": ["winger", "attacking_midfield", "forward"],
     "forward": ["forward", "winger"],
     "goalkeeper": ["goalkeeper"],
+    # Players StatsLook only gives a broad position for.
+    "defender": ["defender", "centre_back", "full_back"],
+    "midfielder": ["midfielder", "defensive_midfield", "central_midfield", "attacking_midfield"],
 }
 POSITION_SCOPES = ("same", "adjacent", "all")
 
@@ -341,10 +344,6 @@ def find_similar_players(
 
     candidates["profile_similarity"] = similarities
     candidates["similarity_basis"] = profile_focus_text(focus_cols)
-    candidates["similarity_reason"] = candidates.apply(
-        lambda row: explain_similarity_from_strengths(row, target, focus_cols),
-        axis=1,
-    )
     if "position_group" in candidates.columns and "position_group" in scored.columns:
         candidates["position_match"] = candidates["position_group"].eq(target["position_group"])
     else:
@@ -381,4 +380,10 @@ def find_similar_players(
     )
 
     sort_column = "league_adjusted_similarity_score" if use_league_strength else "similarity_score"
-    return candidates.sort_values(sort_column, ascending=False).head(top_n)
+    top = candidates.sort_values(sort_column, ascending=False).head(top_n).copy()
+    # Explanations are slow per row: only for the players returned.
+    top["similarity_reason"] = top.apply(
+        lambda row: explain_similarity_from_strengths(row, target, focus_cols),
+        axis=1,
+    )
+    return top

@@ -23,7 +23,7 @@ import requests
 
 from src.config import load_yaml_config
 from src.data_sources.statslook_loader import REQUIRED_STATSLOOK_COLUMNS
-from src.seasons import STATSLOOK_RAW_DIR
+from src.seasons import LEAGUE_ONLY_DIR, STATSLOOK_RAW_DIR, base_season, league_only_label, processed_dir_for
 
 DEFAULT_PAGE_URL = "https://statslook.com/scout/players"
 DEFAULT_API_URL = "https://statslook.com/api/players/stats"
@@ -32,13 +32,16 @@ DETAILED_POSITIONS = {
     153: "CM", 149: "DM", 151: "ST", 152: "LW", 156: "RW", 163: "SS",
 }
 POSITIONS = {24: "Goalkeeper", 25: "Defender", 26: "Midfielder", 27: "Forward"}
+GOALKEEPER_IDS = {24}
+# European club competitions are not domestic leagues.
+NON_DOMESTIC_SHORT_CODE_PREFIX = "UEFA"
 # StatsLook's rate columns are left out: the pipeline computes rates from the counts.
 SKIPPED_FORMATS = {"percentage"}
 # The season "total" of a rating is a sum of match ratings, so the per-match average is kept.
 AVERAGED_FORMATS = {"decimal1"}
 FLIGHT_CHUNK = re.compile(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)</script>', flags=re.S)
 PLAYER_PAGE_URL = "https://statslook.com/players/p/{player_id}/overview"
-PROFILE_TEAM = re.compile(r'"initialProfile":\{"team":\{"id":(\d+),"name":"((?:[^"\\]|\\.)*)"')
+PROFILE_TEAM = re.compile(r'"profile":\{"team":\{"id":(\d+),"name":"((?:[^"\\]|\\.)*)"')
 
 
 def load_fetch_config() -> dict[str, Any]:
@@ -90,6 +93,20 @@ def fetch_pages(session: requests.Session, api_url: str, params: dict[str, Any],
     return pages
 
 
+def fetch_all_players(
+    session: requests.Session, api_url: str, params: dict[str, Any], pause_seconds: float
+) -> list[dict]:
+    """All pages; players with equal sort values can shift between pages while
+    paging, so if some are missing a second pass in the opposite order picks them up."""
+    pages = fetch_pages(session, api_url, params, pause_seconds)
+    total = int(pages[0]["body"].get("total") or 0) if pages else 0
+    seen = {player["playerId"] for page in pages for player in page["body"].get("players") or []}
+    if len(seen) < total:
+        reverse = "asc" if str(params.get("sortDir", "desc")) == "desc" else "desc"
+        pages += fetch_pages(session, api_url, {**params, "sortDir": reverse}, pause_seconds)
+    return pages
+
+
 def _stat_columns(catalog: list[dict]) -> dict[str, dict]:
     return {
         str(stat["id"]): {"column": str(stat["code"]).replace("-", "_"), "format": stat.get("format")}
@@ -104,7 +121,10 @@ def player_table(pages: list[dict], metadata: dict[str, list]) -> pd.DataFrame:
     for page in pages:
         for player in page["body"].get("players") or []:
             row = {key: value for key, value in player.items() if key != "stats"}
-            row["Detailed_Position"] = DETAILED_POSITIONS.get(player.get("detailedPositionId"))
+            # A few players carry a detailed position id in positionId instead.
+            detailed = player.get("detailedPositionId")
+            detailed = detailed if detailed in DETAILED_POSITIONS else player.get("positionId")
+            row["Detailed_Position"] = DETAILED_POSITIONS.get(detailed)
             row["Position"] = POSITIONS.get(player.get("positionId"))
             row["nationality"] = countries.get(player.get("nationalityId"))
             for stat_id, values in (player.get("stats") or {}).items():
@@ -131,12 +151,13 @@ def player_table(pages: list[dict], metadata: dict[str, list]) -> pd.DataFrame:
 
 def _current_club(session: requests.Session, player_id: int) -> tuple[int, str] | None:
     try:
-        response = session.get(PLAYER_PAGE_URL.format(player_id=player_id), timeout=60)
+        # The page's server-component payload is lighter than its HTML and holds the same profile.
+        response = session.get(PLAYER_PAGE_URL.format(player_id=player_id), headers={"RSC": "1"}, timeout=60)
         response.raise_for_status()
     except requests.RequestException:
         return None
-    flight = "".join(json.loads(f'"{chunk}"') for chunk in FLIGHT_CHUNK.findall(response.text))
-    match = PROFILE_TEAM.search(flight)
+    # The payload is UTF-8 but declares no charset.
+    match = PROFILE_TEAM.search(response.content.decode("utf-8", errors="replace"))
     return (int(match.group(1)), json.loads(f'"{match.group(2)}"')) if match else None
 
 
@@ -162,6 +183,34 @@ def fix_national_team_clubs(
             fixed += 1
     print(f"Current club found for {fixed:,} of them.")
     return table
+
+
+def domestic_leagues(metadata: dict[str, list]) -> list[dict]:
+    return [
+        league
+        for league in metadata["leagues"]
+        if not str(league.get("shortCode") or "").startswith(NON_DOMESTIC_SHORT_CODE_PREFIX)
+    ]
+
+
+def combine_league_rows(table: pd.DataFrame, stat_columns: list[str]) -> pd.DataFrame:
+    """One row per player: league totals summed over the leagues they played in
+    that season (a mid-season move), other fields from their busiest league."""
+    if table["playerId"].is_unique:
+        return table
+    minutes = pd.to_numeric(table.get("minutes_played"), errors="coerce").fillna(0)
+    busiest = table.assign(_minutes=minutes).sort_values("_minutes").groupby("playerId").tail(1)
+    busiest = busiest.drop(columns="_minutes").set_index("playerId")
+    summed = [column for column in stat_columns + ["appearances"] if column in table.columns]
+    totals = table.groupby("playerId")[summed].sum(min_count=1)
+    if "rating" in table.columns:
+        # Ratings are per-match averages: weight them by appearances.
+        weights = pd.to_numeric(table["appearances"], errors="coerce").fillna(0)
+        rated = table.assign(_w=weights, _rw=pd.to_numeric(table["rating"], errors="coerce") * weights)
+        grouped = rated.groupby("playerId")[["_rw", "_w"]].sum()
+        totals["rating"] = grouped["_rw"] / grouped["_w"].replace(0, pd.NA)
+    busiest[totals.columns] = totals.reindex(busiest.index)
+    return busiest.reset_index()
 
 
 def _norm(name: str) -> str:
@@ -196,9 +245,11 @@ def map_columns(table: pd.DataFrame, extra_map: dict[str, str] | None = None) ->
     return table
 
 
-def fetch_statslook(season: str | None = None, url: str | None = None) -> Path:
+def fetch_statslook(season: str | None = None, url: str | None = None, league_only: bool = False) -> Path:
+    """Fetch a season. league_only: stats from domestic league matches only (one
+    API pass per league), saved as the "<season> (league only)" variant."""
     config = load_fetch_config()
-    season = season or config.get("season")
+    season = base_season(season or config.get("season") or "")
     api_url = url or config.get("api_url") or DEFAULT_API_URL
     if not season:
         raise SystemExit("Set season in config/statslook_fetch.yaml.")
@@ -213,24 +264,42 @@ def fetch_statslook(season: str | None = None, url: str | None = None) -> Path:
             f"StatsLook has no season {api_season(season)}. Offered: {', '.join(metadata['seasonNames'])}"
         )
     params = {**(config.get("params") or {}), "season": api_season(season)}
-    pages = fetch_pages(session, api_url, params, float(config.get("pause_seconds", 0.3)))
+    pause = float(config.get("pause_seconds", 0.3))
+    if league_only:
+        pages, tables = [], []
+        for league in domestic_leagues(metadata):
+            league_pages = fetch_all_players(session, api_url, {**params, "leagueIds": league["id"]}, pause)
+            league_players = sum(len(page["body"].get("players") or []) for page in league_pages)
+            print(f"{league['name']} ({league.get('shortCode') or league['id']}): {league_players:,} players")
+            if league_players:
+                tables.append(player_table(league_pages, metadata).assign(statslook_league=league["name"]))
+            pages += league_pages
+        stats = [column["column"] for column in _stat_columns(metadata["statCatalog"]).values()]
+        table = combine_league_rows(pd.concat(tables, ignore_index=True), stats)
+        out_dir = STATSLOOK_RAW_DIR / season / LEAGUE_ONLY_DIR
+        out_name = f"statslook_{season.replace('-', '_')}_league_only.csv"
+    else:
+        pages = fetch_all_players(session, api_url, params, pause)
+        table = player_table(pages, metadata)
+        out_dir = STATSLOOK_RAW_DIR / season
+        out_name = f"statslook_{season.replace('-', '_')}.csv"
 
-    out_dir = STATSLOOK_RAW_DIR / season
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "raw_responses.json").write_text(json.dumps(pages, ensure_ascii=False))
     (out_dir / "page_metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=1))
-
-    table = fix_national_team_clubs(session, player_table(pages, metadata), metadata)
+    if config.get("exclude_goalkeepers", True):
+        goalkeeper = table["positionId"].isin(GOALKEEPER_IDS) | table["detailedPositionId"].isin(GOALKEEPER_IDS)
+        table = table[~goalkeeper]
+    table = fix_national_team_clubs(session, table, metadata)
     table = map_columns(table, config.get("column_map") or {})
-    out_path = out_dir / f"statslook_{season.replace('-', '_')}.csv"
+    out_path = out_dir / out_name
     table.to_csv(out_path, index=False)
 
-    reported = pages[0]["body"].get("total")
+    # League-only pulls one list per league; their totals don't add up to a player count.
+    reported = None if league_only else pages[0]["body"].get("total")
     missing = [column for column in REQUIRED_STATSLOOK_COLUMNS if column not in table.columns]
-    print(
-        f"Saved {len(table):,} rows (StatsLook reports {reported:,}) "
-        f"and {len(table.columns)} columns to {out_path}"
-    )
+    counted = f" (StatsLook reports {reported:,} including goalkeepers)" if reported is not None else ""
+    print(f"Saved {len(table):,} rows{counted} and {len(table.columns)} columns to {out_path}")
     if missing:
         print(
             "Missing columns the pipeline needs: "
@@ -247,13 +316,18 @@ def main() -> None:
     parser.add_argument("--season", default=None)
     parser.add_argument("--url", default=None, help="API URL override.")
     parser.add_argument("--build", action="store_true", help="Build the season's master table afterwards.")
+    parser.add_argument(
+        "--league-only",
+        action="store_true",
+        help='Domestic league matches only; saved as the "<season> (league only)" variant.',
+    )
     args = parser.parse_args()
-    out_path = fetch_statslook(args.season, args.url)
+    out_path = fetch_statslook(args.season, args.url, league_only=args.league_only)
     if args.build:
         from src.enrichment.transfermarkt_joiner import build_players_master
-        from src.seasons import processed_dir_for
 
-        season = args.season or load_fetch_config().get("season")
+        season = base_season(args.season or load_fetch_config().get("season"))
+        season = league_only_label(season) if args.league_only else season
         master = build_players_master(
             statslook_path=out_path, processed_dir=processed_dir_for(season), season=season
         )

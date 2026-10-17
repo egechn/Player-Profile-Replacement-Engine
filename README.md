@@ -93,11 +93,25 @@ python -m src.data_sources.statslook_fetch --build
 
 The scout page reads a public JSON API (`/api/players/stats`, no login, 100 players per page), so the fetcher calls it directly with `requests`. Stats arrive keyed by numeric id; their names come from the stat catalog embedded in the scout page. Season totals are kept, except for ratings (the per-match average). StatsLook's own percentage columns are left out: the pipeline computes rates from the counts. Players the API lists under a national team (or no team) get their club from their StatsLook player page. The rows are saved to `data/raw/statslook/<season>/statslook_<season>.csv` (plus `raw_responses.json` and `page_metadata.json` for checking), and `--build` builds the season. Field names are mapped to the pipeline's (`Min`, `Gol`, …) through the `statslook_api` section of `config/column_mapping.yaml`, then `column_map` in `config/statslook_fetch.yaml`, then a case-insensitive match. A full fetch takes a few minutes.
 
-Stats are totals over every competition the player played in that season (league, cups, European and national-team matches).
+Stats are totals over every competition the player played in that season (league, cups, European and national-team matches). For domestic league matches only, fetch the league-only variant:
+
+```bash
+python -m src.data_sources.statslook_fetch --league-only --build
+```
+
+It queries the API once per domestic league (European competitions left out), adds up a player's leagues if they moved mid-season, and appears in the **Season** picker as `2026-27 (league only)`. Files go to `data/raw/statslook/<season>/league_only/` and `data/processed/<season>/league_only/`.
+
+The fetch takes every outfield player (goalkeepers are left out: `exclude_goalkeepers` in `config/statslook_fetch.yaml`). It does not use StatsLook's position filter, which also drops players StatsLook has no detailed position for (about 750 a season); those players get their broad position (defender, midfielder, forward) and are included in adjacent-role searches.
+
+To keep the data fresh on a schedule, see `scripts/README.md` (`scripts/weekly_update.sh`).
 
 ### Small samples
 
 Before ranking, each player's per-90 numbers and rates are pulled toward the typical value for their position, as if they had played 450 more minutes at that level: a player on 450 minutes sits halfway between their own numbers and the position's, one on 2,700 minutes keeps 86% of their own. This keeps 30-minute cameos out of the top of every profile area. The strength (`shrinkage_minutes`) and the tables' **Sample** indicator (●●● 900+ minutes, ●● 450+, ● below) are set in `config/reliability.yaml`.
+
+### Watchlist and downloads
+
+Click a row in either table and press **☆ Add to watchlist** to keep the player in `data/watchlist.csv`. The **Watchlist** section at the bottom of the page shows the list; notes can be edited and rows deleted there (then **Save watchlist changes**). Both player tables and the watchlist can be downloaded as CSV.
 
 ### Minimum minutes
 

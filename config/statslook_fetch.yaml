@@ -15,9 +15,11 @@ params:
   sortDir: desc
   limit: 100          # the API caps pages at 100
   minApps: 0
-  # CB 148, RB 154, LB 155, RM 158, LM 157, AM 150, CM 153, DM 149,
-  # ST 151, LW 152, RW 156, SS 163
-  positionIds: "148,154,155,158,157,150,153,149,151,152,156,163"
+  # No positionIds filter: it also drops players StatsLook has no detailed
+  # position for (about 750 outfield players a season).
+
+# Outfield players only: the profiles are built for outfield roles.
+exclude_goalkeepers: true
 
 user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 pause_seconds: 0.3
