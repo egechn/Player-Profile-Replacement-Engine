@@ -8,7 +8,6 @@ import streamlit as st
 from src.cleaning.normalize_positions import position_group_label
 from src.data_sources.statslook_fetch import fetch_statslook, load_fetch_config
 from src.engine.replacement import recommend_replacements
-from src.cleaning.normalize_names import normalize_text
 from src.engine.similarity import find_similar_players
 from src.enrichment.transfermarkt_joiner import build_players_master
 from src.features.combined_seasons import combine_season_profiles, combined_label, combined_parts
@@ -207,32 +206,8 @@ with st.sidebar:
     leagues = sorted(pool["league_display_name"].dropna().unique().tolist())
     selected_leagues = st.multiselect("Leagues", leagues)
 
-def search_text(series: pd.Series) -> pd.Series:
-    return series.map(normalize_text)
-
-
-search = st.text_input(
-    "Search player",
-    placeholder="Name or club, e.g. vinicius, real madrid",
-    help="Accents and capitals don't matter. Matches the short name, the full name and the club.",
-)
-by_minutes = df.sort_values("Min", ascending=False)
-matches = by_minutes
-if search.strip():
-    haystack = (
-        search_text(by_minutes["displayName"]) + " " + search_text(by_minutes["playerName"])
-        + " " + search_text(by_minutes.get("current_team", by_minutes["teamName"]))
-    )
-    tokens = normalize_text(search).split()
-    matches = by_minutes[pd.concat([haystack.str.contains(t, regex=False) for t in tokens], axis=1).all(axis=1)]
-    # Players whose short name matches come first (most minutes first within each group).
-    short_name = search_text(matches["displayName"])
-    in_short_name = pd.concat([short_name.str.contains(t, regex=False) for t in tokens], axis=1).all(axis=1)
-    matches = pd.concat([matches[in_short_name], matches[~in_short_name]])
-    if matches.empty:
-        st.warning(f"No player matches '{search}'. Showing all players.")
-        matches = by_minutes
-searched = search.strip() and len(matches) < len(by_minutes)
+# Most minutes first. The dropdown's own search ignores accents and matches the club too.
+matches = df.sort_values("Min", ascending=False)
 labels = (
     matches["displayName"].fillna(matches["playerName"]).astype(str)
     + " · " + matches.get("current_team", matches["teamName"]).fillna(matches["teamName"]).fillna("no club").astype(str)
@@ -240,10 +215,11 @@ labels = (
     + " · " + pd.to_numeric(matches["Min"], errors="coerce").fillna(0).map("{:,.0f} min".format)
 ).to_dict()
 target_index = st.selectbox(
-    f"Player ({len(matches):,} found)" if searched else "Player",
+    "Player",
     matches.index.tolist(),
     format_func=labels.get,
     key=f"player_{season}",
+    help="Type to search by name or club, e.g. mbappe or real madrid.",
 )
 selected_player = df.loc[target_index].get("displayName") or df.loc[target_index].get("playerName")
 target = df.loc[target_index]
