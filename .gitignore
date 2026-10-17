@@ -61,3 +61,7 @@ Desktop/
 anaconda_projects/
 sql_st_score.txt
 docker-compose.yml
+
+# Local backups and update logs
+backups/
+data/logs/
