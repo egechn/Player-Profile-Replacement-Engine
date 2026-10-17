@@ -29,6 +29,7 @@ DEFAULT_PER90_COLUMNS = [
     "Accurate_Crosses",
     "Dribble_Attempts",
     "Successful_Dribbles",
+    "Dribbled_Past",
     "Tackles",
     "Tackles_Won",
     "Interception",
@@ -67,4 +68,3 @@ def add_per90(
         result[f"{column}_per90"] = result[f"{column}_per90"].fillna(0)
 
     return result
-

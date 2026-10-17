@@ -6,7 +6,12 @@ import numpy as np
 import pandas as pd
 
 from src.config import load_yaml_config
-from src.engine.similarity import ensure_profile_scores, find_similar_players, resolve_target_index
+from src.engine.similarity import (
+    ensure_profile_scores,
+    find_similar_players,
+    target_strength_profile_columns,
+)
+from src.engine.similarity import resolve_target_index
 from src.features.profile_scores import profile_vector_columns
 
 
@@ -19,16 +24,13 @@ DEFAULT_REPLACEMENT_WEIGHTS = {
 }
 
 PROFILE_EXPLANATION_METRICS = {
-    "ball_progressor_score": ["Successful_Dribbles_per90", "Passes_Final_Third_per90", "Touches_per90"],
-    "creator_score": ["Key_Passes_per90", "Chances_Created_per90", "Asist_per90"],
-    "finisher_score": ["Gol_per90", "xG_per90", "xGoT_per90"],
-    "presser_score": ["Tackles_per90", "Interception_per90", "Ball_Recovery_per90"],
-    "ball_winner_score": ["Tackles_Won_per90", "Duels_Won_per90", "Ball_Recovery_per90"],
-    "aerial_score": ["Aerials_Won_per90", "aerial_win_rate", "height"],
-    "possession_security_score": ["pass_accuracy", "Possession_Lost_per90", "Turn_Over_per90"],
-    "wide_creator_score": ["Accurate_Crosses_per90", "Successful_Dribbles_per90", "Key_Passes_per90"],
-    "box_threat_score": ["xG_per90", "Shots_Total_per90", "Shots_on_Target_per90"],
-    "deep_playmaker_score": ["Passes_per90", "Accurate_Passes_per90", "Long_Balls_Won_per90"],
+    "ground_defence_score": ["Tackles_Won_per90", "Interception_per90", "duel_success_rate"],
+    "air_score": ["Aerials_Won_per90", "aerial_win_rate", "height"],
+    "build_up_score": ["Passes_per90", "pass_accuracy", "Long_Balls_Won_per90"],
+    "orchestration_score": ["Passes_Final_Third_per90", "Through_Balls_Won_per90", "Touches_per90"],
+    "take_on_score": ["Successful_Dribbles_per90", "Dribble_Attempts_per90", "dribble_success_rate"],
+    "chance_creation_score": ["Key_Passes_per90", "Chances_Created_per90", "Accurate_Crosses_per90"],
+    "finishing_score": ["Gol_per90", "xG_per90", "Shots_on_Target_per90"],
 }
 
 
@@ -75,8 +77,9 @@ def position_role_match_score(candidate: pd.Series, target: pd.Series) -> float:
 
 
 def _profile_explanation(candidate: pd.Series, target: pd.Series, vector_cols: list[str]) -> str:
+    focus_cols = target_strength_profile_columns(target, vector_cols)
     differences = []
-    for column in vector_cols:
+    for column in focus_cols:
         candidate_value = pd.to_numeric(pd.Series([candidate.get(column)]), errors="coerce").iloc[0]
         target_value = pd.to_numeric(pd.Series([target.get(column)]), errors="coerce").iloc[0]
         if pd.isna(candidate_value) or pd.isna(target_value):
@@ -92,6 +95,7 @@ def _profile_explanation(candidate: pd.Series, target: pd.Series, vector_cols: l
         metric_candidates.extend(PROFILE_EXPLANATION_METRICS.get(profile_col, []))
 
     close_metrics = []
+    seen_metrics = set()
     for metric in metric_candidates:
         if metric not in candidate.index or metric not in target.index:
             continue
@@ -101,13 +105,23 @@ def _profile_explanation(candidate: pd.Series, target: pd.Series, vector_cols: l
             continue
         scale = max(abs(target_value), 1)
         if abs(candidate_value - target_value) / scale <= 0.25:
-            close_metrics.append(metric.replace("_per90", "/90").replace("_", " "))
+            metric_label = metric.replace("_per90", "/90").replace("_", " ")
+            if metric_label in seen_metrics:
+                continue
+            close_metrics.append(metric_label)
+            seen_metrics.add(metric_label)
         if len(close_metrics) == 3:
             break
 
-    profile_text = ", ".join(close_profiles) if close_profiles else "profile scores"
+    profile_text = ", ".join(close_profiles) if close_profiles else "target strengths"
     metric_text = ", ".join(close_metrics) if close_metrics else "the underlying role metrics"
-    return f"Similar in {profile_text}; closest metric signals include {metric_text}."
+    focus_text = ", ".join(
+        column.replace("_score", "").replace("_", " ") for column in focus_cols
+    )
+    return (
+        f"Similar in target strengths: {profile_text}; closest metric signals include "
+        f"{metric_text}. Search focused on: {focus_text}."
+    )
 
 
 def recommend_replacements(
@@ -122,6 +136,7 @@ def recommend_replacements(
     max_market_value_eur: float | None = None,
     leagues: list[str] | None = None,
     positions: list[str] | None = None,
+    position_scope: str = "adjacent",
 ) -> pd.DataFrame:
     scored = ensure_profile_scores(df)
     target_index = resolve_target_index(scored, player_name, statslook_row_id, tm_player_id)
@@ -135,6 +150,7 @@ def recommend_replacements(
         max_market_value_eur=max_market_value_eur,
         leagues=leagues,
         positions=positions,
+        position_scope=position_scope,
         use_league_strength=False,
     ).copy()
     if candidates.empty:

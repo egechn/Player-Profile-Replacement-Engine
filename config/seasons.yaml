@@ -1,0 +1,22 @@
+# Season handling.
+#
+# Put each season's StatsLook export in its own folder:
+#   data/raw/statslook/2026-27/<any name>.csv
+# and build it with:  python -m src.pipeline --season 2026-27
+# The processed table goes to data/processed/2026-27/players_master.parquet.
+#
+# The original single file (data/raw/statslook/Statslook_Scouting_Master_Final.csv)
+# and data/processed/players_master.parquet are treated as this season:
+legacy_season: "2025-26"
+
+# Season the app opens on. Empty = the latest available season.
+default_season: ""
+
+# Optional per-season team -> league overrides, for promotions and relegations:
+#   config/season_team_leagues/2026-27.yaml   (format: "Team Name": League Name)
+
+# Default "Minimum minutes" in the app per season. The slider can still be moved.
+# Seasons not listed use "auto": 20% of the minutes played by the 90th-percentile
+# player that season (so an early-season export gets a low default).
+min_minutes:
+  "2025-26": 600
