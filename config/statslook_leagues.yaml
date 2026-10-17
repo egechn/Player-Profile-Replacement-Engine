@@ -1,0 +1,34 @@
+# StatsLook league id -> league name used in config/league_strength.yaml.
+# Used to give a player a league when their club isn't in the team-to-league
+# mapping but StatsLook lists them in that league (src/enrichment/api_reference.py).
+# Derived on 2026-10-17 from players whose league was already known (91-99% agreement).
+8: Premier League
+9: EFL Championship
+72: Eredivisie
+82: Bundesliga
+85: 2. Bundesliga
+181: Admiral Bundesliga
+208: Belgian Pro League
+229: Bulgarian First League
+262: Czech First League
+271: Danish Superliga
+301: Ligue 1
+304: Ligue 2
+325: Greek Super League
+384: Serie A
+387: Serie B
+444: Eliteserien
+453: Ekstraklasa
+462: Liga Portugal
+474: Romanian SuperLiga
+486: Russian Premier League
+564: La Liga
+567: LaLiga 2
+573: Allsvenskan
+591: Swiss Super League
+600: Turkish Super Lig
+603: Turkish First League
+636: Argentine Primera Division
+648: Brazilian Serie A
+779: Major League Soccer
+944: Saudi Pro League

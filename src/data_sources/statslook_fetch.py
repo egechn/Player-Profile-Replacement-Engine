@@ -311,6 +311,48 @@ def fetch_statslook(season: str | None = None, url: str | None = None, league_on
     return out_path
 
 
+def fetch_api_reference(season: str) -> Path:
+    """Ids, names, birth dates, clubs, positions and domestic league of every
+    StatsLook player in a season, used to fill gaps in a season export that
+    doesn't come from the API (src/enrichment/api_reference.py)."""
+    from src.enrichment.api_reference import reference_path
+
+    config = load_fetch_config()
+    season = base_season(season)
+    session = requests.Session()
+    if config.get("user_agent"):
+        session.headers["User-Agent"] = config["user_agent"]
+    api_url = config.get("api_url") or DEFAULT_API_URL
+    pause = float(config.get("pause_seconds", 0.3))
+    metadata = page_metadata(session, config.get("page_url") or DEFAULT_PAGE_URL)
+    params = {**(config.get("params") or {}), "season": api_season(season)}
+
+    players = player_table(fetch_all_players(session, api_url, params, pause), metadata)
+    leagues = []
+    for league in domestic_leagues(metadata):
+        pages = fetch_all_players(session, api_url, {**params, "leagueIds": league["id"]}, pause)
+        if not sum(len(page["body"].get("players") or []) for page in pages):
+            continue
+        table = player_table(pages, metadata)[["playerId", "teamId", "teamName", "minutes_played"]]
+        leagues.append(table.assign(league_id=league["id"], league_name=league["name"]))
+    # A player's league: the domestic league they played most minutes in.
+    by_league = (
+        pd.concat(leagues)
+        .sort_values("minutes_played")
+        .groupby("playerId")
+        .tail(1)
+        .rename(columns={"teamId": "league_team_id", "teamName": "league_team", "minutes_played": "league_minutes"})
+    )
+    columns = ["playerId", "playerName", "displayName", "dateOfBirth", "positionId", "detailedPositionId",
+               "Detailed_Position", "Position", "teamId", "teamName"]
+    reference = players[columns].merge(by_league, on="playerId", how="left")
+    path = reference_path(season)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    reference.to_csv(path, index=False)
+    print(f"Saved {len(reference):,} players ({reference['league_id'].notna().sum():,} with a domestic league) to {path}")
+    return path
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Fetch StatsLook player data for one season.")
     parser.add_argument("--season", default=None)
@@ -321,7 +363,15 @@ def main() -> None:
         action="store_true",
         help='Domestic league matches only; saved as the "<season> (league only)" variant.',
     )
+    parser.add_argument(
+        "--reference",
+        action="store_true",
+        help="Fetch the API reference used to fill gaps in a non-API season export (e.g. 2025-26).",
+    )
     args = parser.parse_args()
+    if args.reference:
+        fetch_api_reference(args.season or load_fetch_config().get("season"))
+        return
     out_path = fetch_statslook(args.season, args.url, league_only=args.league_only)
     if args.build:
         from src.enrichment.transfermarkt_joiner import build_players_master

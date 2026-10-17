@@ -7,7 +7,8 @@ import pandas as pd
 from src.cleaning.clean_statslook import clean_statslook
 from src.cleaning.clean_transfermarkt import build_transfermarkt_enrichment
 from src.config import load_yaml_config
-from src.data_sources.statslook_loader import find_statslook_source
+from src.data_sources.statslook_loader import find_statslook_source, load_statslook
+from src.enrichment.api_reference import fill_from_api_reference, fill_leagues_from_statslook
 from src.data_sources.transfermarkt_loader import (
     DEFAULT_TRANSFERMARKT_DIR,
     missing_transfermarkt_files,
@@ -69,7 +70,8 @@ def build_players_master(
 ) -> pd.DataFrame:
     statslook_source = find_statslook_source(statslook_path)
     processed_dir = Path(processed_dir)
-    statslook_clean = add_current_club(clean_statslook(source_path=statslook_source))
+    raw = fill_from_api_reference(load_statslook(statslook_source), season)
+    statslook_clean = add_current_club(clean_statslook(df=raw))
     if season:
         statslook_clean.insert(0, "season", season)
     write_table(statslook_clean, processed_dir / "statslook_clean.parquet")
@@ -81,7 +83,9 @@ def build_players_master(
             formatted = "\n".join(str(path) for path in missing)
             raise FileNotFoundError(f"Missing Transfermarkt files:\n{formatted}")
 
-        master = apply_user_team_league_mapping(_empty_enrichment_columns(statslook_clean))
+        master = fill_leagues_from_statslook(
+            apply_user_team_league_mapping(_empty_enrichment_columns(statslook_clean))
+        )
         master = apply_league_strength_columns(master)
         write_table(master, processed_dir / "players_master.parquet")
         unmatched = master[["playerName", "displayName", "dateOfBirth", "teamName"]].copy()
@@ -112,7 +116,7 @@ def build_players_master(
         how="left",
     )
     master = _empty_enrichment_columns(master)
-    master = apply_user_team_league_mapping(master)
+    master = fill_leagues_from_statslook(apply_user_team_league_mapping(master))
     master = apply_league_strength_columns(master)
 
     unmatched = master[master["match_method"].eq("unmatched")].copy()

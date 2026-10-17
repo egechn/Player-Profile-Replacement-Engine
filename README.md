@@ -81,6 +81,8 @@ For promoted and relegated clubs, add `config/season_team_leagues/<season>.yaml`
 
 Transfermarkt market values and contracts are the same snapshot for every season (the dataset's last snapshot is 6 July 2026; it is no longer refreshed).
 
+The legacy 2025-26 export has gaps: no StatsLook ids, some players without a club or listed under a national team, and a few goalkeepers with an outfield position. `python -m src.data_sources.statslook_fetch --reference --season 2025-26` saves an API reference to `data/raw/statslook/reference/`; when building, the pipeline uses it to fill only those gaps (matched on name + date of birth) and to give players still without a league the domestic league StatsLook lists them in (`config/statslook_leagues.yaml`). Stats and the player list are unchanged.
+
 The **Current club** shown in the tables is the player's club in the latest season's StatsLook data, whatever season the stats are from (`src/enrichment/current_club.py`). The legacy 2025-26 file has no StatsLook ids, so its players are matched on name + date of birth; players not in the latest season keep their own season's club. **League (stats)** is the league of the season the stats come from. A contract year is shown as `?` when the contract has already ended or Transfermarkt has the player at another club than the current one (a transfer after the snapshot).
 
 ### Fetching a season from StatsLook
