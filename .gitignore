@@ -65,3 +65,10 @@ docker-compose.yml
 # Local backups and update logs
 backups/
 data/logs/
+
+# StatsLook raw API responses and page metadata (written by each fetch)
+data/raw/statslook/**/raw_responses.json
+data/raw/statslook/**/page_metadata.json
+
+# Local Claude Code settings
+.claude/
